@@ -100,8 +100,8 @@ namespace Game_Logic_Class
                 players[i].Play(die1, die2);
                 //test
                 //test2
-                //ASsa
-                //ASsa
+                /ewf
+                /ewwe
             }
 
         }
