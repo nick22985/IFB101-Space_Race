@@ -48,7 +48,7 @@ namespace Space_Race
             
             Console.Write("Press Enter to play a round ...");
             Console.ReadKey();
-            SpaceRaceGame.PlayOneRound(); // this is only meant to be for one player.
+            SpaceRaceGame.PlayOneRound();
             PressEnter();
         }//end Main
 
