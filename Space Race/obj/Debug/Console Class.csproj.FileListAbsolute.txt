@@ -1,0 +1,24 @@
+C:\Sandpit\Student Project\Space Race\Space Race\bin\Debug\Space Race.exe.config
+C:\Sandpit\Student Project\Space Race\Space Race\bin\Debug\Space Race.exe
+C:\Sandpit\Student Project\Space Race\Space Race\bin\Debug\Space Race.pdb
+C:\Sandpit\Student Project\Space Race\Space Race\obj\Debug\Console Class.csprojAssemblyReference.cache
+C:\Sandpit\Student Project\Space Race\Space Race\obj\Debug\Console Class.csproj.CoreCompileInputs.cache
+C:\Sandpit\Student Project\Space Race\Space Race\obj\Debug\Space Race.exe
+C:\Sandpit\Student Project\Space Race\Space Race\obj\Debug\Space Race.pdb
+C:\Sandpit\Student Project\Space Race\Space Race\bin\Debug\Game Logic Class.dll
+C:\Sandpit\Student Project\Space Race\Space Race\bin\Debug\Object Classes.dll
+C:\Sandpit\Student Project\Space Race\Space Race\bin\Debug\Game Logic Class.pdb
+C:\Sandpit\Student Project\Space Race\Space Race\bin\Debug\Object Classes.pdb
+C:\Sandpit\Student Project\Space Race\Space Race\obj\Debug\Console Class.csproj.CopyComplete
+C:\Users\nick\Desktop\Space Race\Space Race\bin\Debug\Space Race.exe.config
+C:\Users\nick\Desktop\Space Race\Space Race\bin\Debug\Space Race.exe
+C:\Users\nick\Desktop\Space Race\Space Race\bin\Debug\Space Race.pdb
+C:\Users\nick\Desktop\Space Race\Space Race\bin\Debug\Game Logic Class.dll
+C:\Users\nick\Desktop\Space Race\Space Race\bin\Debug\Object Classes.dll
+C:\Users\nick\Desktop\Space Race\Space Race\bin\Debug\Game Logic Class.pdb
+C:\Users\nick\Desktop\Space Race\Space Race\bin\Debug\Object Classes.pdb
+C:\Users\nick\Desktop\Space Race\Space Race\obj\Debug\Console Class.csprojAssemblyReference.cache
+C:\Users\nick\Desktop\Space Race\Space Race\obj\Debug\Console Class.csproj.CoreCompileInputs.cache
+C:\Users\nick\Desktop\Space Race\Space Race\obj\Debug\Console Class.csproj.CopyComplete
+C:\Users\nick\Desktop\Space Race\Space Race\obj\Debug\Space Race.exe
+C:\Users\nick\Desktop\Space Race\Space Race\obj\Debug\Space Race.pdb
