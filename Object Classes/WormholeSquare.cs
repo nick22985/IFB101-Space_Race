@@ -16,10 +16,9 @@ namespace Object_Classes {
             fuelUsed = fuel;
         }
 
-
         public override Square NextSquare() 
-        { 
-                return Board.Squares[destination];
+        {
+            return Board.Squares[destination];
         }//end NextSquare
 
         /// <summary>  

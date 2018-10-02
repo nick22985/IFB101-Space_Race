@@ -31,6 +31,22 @@ namespace Space_Race
              Output each player's details at end of the game
            */
             Board.SetUpBoard();
+            Console.WriteLine("     This game is for 2 to 6 players.");
+            Console.WriteLine("     How many players (2-6): ");
+            int number = int.Parse(Console.ReadLine());
+            if (number > 6 || number < 2)
+            {
+                while (number > 6 || number < 2)
+                {
+                    Console.WriteLine("Number of Players is not beetween 2-6");
+                    number = int.Parse(Console.ReadLine()); // add tryparse
+                }
+            }
+
+            SpaceRaceGame.NumberOfPlayers = number;
+            
+            Console.Write("Press Enter to play a round ...");
+            Console.ReadKey();
             SpaceRaceGame.SetUpPlayers();
             SpaceRaceGame.PlayOneRound();
             PressEnter();
@@ -45,7 +61,7 @@ namespace Space_Race
         /// </summary>
         static void DisplayIntroductionMessage()
         {
-            Console.WriteLine("Welcome to Space Race.\n");
+            Console.WriteLine("     Welcome to Space Race.\n");
         } //end DisplayIntroductionMessage
 
         /// <summary>

@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System;
 
 namespace Object_Classes
 {
@@ -192,6 +191,7 @@ namespace Object_Classes
             if (squares[squareNum].Name == "Black Hole")
             {
                 //BlackholeSquare.LandOn();
+               
             }
             if (squares[squareNum].Name == "Worm Hole")
             {

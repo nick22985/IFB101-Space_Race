@@ -6,9 +6,6 @@ using System.Threading;
 
 namespace Object_Classes
 {
-
-
-
     /// <summary>
     /// Represents a dice with many face values that can be rolled.
     /// </summary>
