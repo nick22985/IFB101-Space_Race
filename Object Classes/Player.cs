@@ -154,7 +154,7 @@ namespace Object_Classes
         ///     the number of squares to move forward;
         ///     moves the player position on the board; 
         ///     updates the player's location to new position; and
-        ///     determines the poutcome of landing on this square.
+        ///     determines the outcome of landing on this square.
         /// Pre: the dice are itialised
         /// Post: the player is moved along the board and the effect
         ///     of the location the player landed on is applied.
@@ -168,9 +168,9 @@ namespace Object_Classes
             int temp2 = d2.Roll();
             d2.Reset();
             int dice = temp1 + temp2;
-            position = position + dice; 
+            position = position + dice;
 
-
+            Board.FindDestSquare( position);
         } // end Play.
 
 

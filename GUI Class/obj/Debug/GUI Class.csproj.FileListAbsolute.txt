@@ -38,3 +38,18 @@ C:\Users\nick\Desktop\Space Race\GUI Class\obj\Debug\GUI Class.csproj.CoreCompil
 C:\Users\nick\Desktop\Space Race\GUI Class\obj\Debug\GUI Class.csproj.CopyComplete
 C:\Users\nick\Desktop\Space Race\GUI Class\obj\Debug\GUI Class.exe
 C:\Users\nick\Desktop\Space Race\GUI Class\obj\Debug\GUI Class.pdb
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\GUI Class\bin\Debug\GUI Class.exe.config
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\GUI Class\bin\Debug\GUI Class.exe
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\GUI Class\bin\Debug\GUI Class.pdb
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\GUI Class\bin\Debug\Game Logic Class.dll
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\GUI Class\bin\Debug\Object Classes.dll
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\GUI Class\bin\Debug\Game Logic Class.pdb
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\GUI Class\bin\Debug\Object Classes.pdb
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\GUI Class\obj\Debug\GUI Class.csprojAssemblyReference.cache
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\GUI Class\obj\Debug\GUI_Class.SpaceRaceForm.resources
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\GUI Class\obj\Debug\GUI_Class.Properties.Resources.resources
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\GUI Class\obj\Debug\GUI Class.csproj.GenerateResource.cache
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\GUI Class\obj\Debug\GUI Class.csproj.CoreCompileInputs.cache
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\GUI Class\obj\Debug\GUI Class.csproj.CopyComplete
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\GUI Class\obj\Debug\GUI Class.exe
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\GUI Class\obj\Debug\GUI Class.pdb

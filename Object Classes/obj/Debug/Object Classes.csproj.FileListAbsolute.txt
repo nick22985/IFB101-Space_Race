@@ -10,3 +10,9 @@ C:\Users\nick\Desktop\Space Race\Object Classes\obj\Debug\Object Classes.dll
 C:\Users\nick\Desktop\Space Race\Object Classes\obj\Debug\Object Classes.pdb
 C:\Users\nick\Desktop\Space Race\Object Classes\bin\Debug\Object Classes.dll
 C:\Users\nick\Desktop\Space Race\Object Classes\bin\Debug\Object Classes.pdb
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\Object Classes\bin\Debug\Object Classes.dll
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\Object Classes\bin\Debug\Object Classes.pdb
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\Object Classes\obj\Debug\Object Classes.csprojAssemblyReference.cache
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\Object Classes\obj\Debug\Object Classes.csproj.CoreCompileInputs.cache
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\Object Classes\obj\Debug\Object Classes.dll
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\Object Classes\obj\Debug\Object Classes.pdb
