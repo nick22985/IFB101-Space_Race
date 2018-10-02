@@ -187,7 +187,16 @@ namespace Object_Classes
             amount = holes[squareNum, 3];
             //  CODE NEEDS TO BE ADDED HERE 
 
-        } //end FindDestSquare
+            if (squareNum = holes /*black hole*/)
+            {
+                squares[blackHoles[squareNum, 0]] 
+            }
+            if (squareNum = holes /*black hole*/)
+            { 
+
+            }
+
+            } //end FindDestSquare
 
     } //end class Board
 }
