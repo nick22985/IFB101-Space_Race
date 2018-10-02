@@ -50,7 +50,6 @@ namespace Space_Race
             Console.ReadKey();
             SpaceRaceGame.PlayOneRound(); // this is only meant to be for one player.
             PressEnter();
-0
         }//end Main
 
    
