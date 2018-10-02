@@ -44,13 +44,13 @@ namespace Space_Race
             }
 
             SpaceRaceGame.NumberOfPlayers = number;
+            SpaceRaceGame.SetUpPlayers();
             
             Console.Write("Press Enter to play a round ...");
             Console.ReadKey();
-            SpaceRaceGame.SetUpPlayers();
-            SpaceRaceGame.PlayOneRound();
+            SpaceRaceGame.PlayOneRound(); // this is only meant to be for one player.
             PressEnter();
-
+0
         }//end Main
 
    

@@ -172,8 +172,8 @@ namespace Object_Classes
 
             //Board.FindDestSquare(Board.squares[], position); // Calculating fuel and board position.
 
-            ReachedFinalSquare();
 
+            ReachedFinalSquare();
         } // end Play.
 
 
