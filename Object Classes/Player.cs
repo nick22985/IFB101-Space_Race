@@ -170,7 +170,8 @@ namespace Object_Classes
             int dice = temp1 + temp2;
             position = position + dice;
 
-            Board.FindDestSquare( , position);
+            //Board.FindDestSquare( , position); // Calculating fuel and board position.
+
         } // end Play.
 
 

@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System;
 
 namespace Object_Classes
 {
@@ -133,6 +134,7 @@ namespace Object_Classes
 
             // Create the 'finish' square.
             squares[FINISH_SQUARE_NUMBER] = new Square("Finish", FINISH_SQUARE_NUMBER);
+            
         } // end SetUpBoard
 
 
@@ -186,16 +188,16 @@ namespace Object_Classes
             //finds the amount of fuel used
             amount = holes[squareNum, 3];
             //  CODE NEEDS TO BE ADDED HERE 
-
-            if (squareNum = holes /*black hole*/)
+            /*
+            if (squareNum = holes black hole)
             {
-                squares[blackHoles[squareNum, 0]] 
+              
             }
-            if (squareNum = holes /*black hole*/)
-            { 
-
+            if (squareNum = holes wormHoles)
+            {
+                squares[wormHoles[squareNum, 0]];
             }
-
+           */
             } //end FindDestSquare
 
     } //end class Board
