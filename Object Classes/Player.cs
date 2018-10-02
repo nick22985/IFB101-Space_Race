@@ -168,8 +168,6 @@ namespace Object_Classes
             int temp2 = d2.Roll();
             d2.Reset();
             int dice = temp1 + temp2;
-            Console.Write("{0}", dice);
-            //  CODE NEEDS TO BE ADDED HERE
             position = position + dice; 
 
 

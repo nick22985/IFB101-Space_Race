@@ -22,3 +22,15 @@ C:\Users\nick\Desktop\Space Race\Space Race\obj\Debug\Console Class.csproj.CoreC
 C:\Users\nick\Desktop\Space Race\Space Race\obj\Debug\Console Class.csproj.CopyComplete
 C:\Users\nick\Desktop\Space Race\Space Race\obj\Debug\Space Race.exe
 C:\Users\nick\Desktop\Space Race\Space Race\obj\Debug\Space Race.pdb
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\Space Race\bin\Debug\Space Race.exe.config
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\Space Race\bin\Debug\Space Race.exe
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\Space Race\bin\Debug\Space Race.pdb
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\Space Race\bin\Debug\Game Logic Class.dll
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\Space Race\bin\Debug\Object Classes.dll
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\Space Race\bin\Debug\Game Logic Class.pdb
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\Space Race\bin\Debug\Object Classes.pdb
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\Space Race\obj\Debug\Console Class.csprojAssemblyReference.cache
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\Space Race\obj\Debug\Console Class.csproj.CoreCompileInputs.cache
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\Space Race\obj\Debug\Console Class.csproj.CopyComplete
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\Space Race\obj\Debug\Space Race.exe
+C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\Space Race\obj\Debug\Space Race.pdb
