@@ -181,24 +181,25 @@ namespace Object_Classes
         private static void FindDestSquare(int[,] holes, int squareNum, out int destNum, out int amount)
         {
             const int start = 0, exit = 1, fuel = 2;
-
+            
             destNum = 0; amount = 0;
             //finds the destination for a black/worm hole
             destNum = holes[squareNum, 2];
             //finds the amount of fuel used
             amount = holes[squareNum, 3];
             //  CODE NEEDS TO BE ADDED HERE 
-            /*
-            if (squareNum = holes black hole)
+
+            if (squares[squareNum].Name == "Black Hole")
             {
-              
+                //BlackholeSquare.LandOn();
             }
-            if (squareNum = holes wormHoles)
+            if (squares[squareNum].Name == "Worm Hole")
             {
-                squares[wormHoles[squareNum, 0]];
+                //WormholeSquare.LandOn();
             }
-           */
-            } //end FindDestSquare
+
+
+        } //end FindDestSquare
 
     } //end class Board
 }
