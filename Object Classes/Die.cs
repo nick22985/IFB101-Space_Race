@@ -24,7 +24,7 @@ namespace Object_Classes
         {
             get
             {
-                return numOfFaces;
+                return numOfFaces; 
             }
         }
 
