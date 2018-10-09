@@ -187,7 +187,7 @@ namespace Object_Classes
             //finds the amount of fuel used
             amount = holes[squareNum, 3];
             //  CODE NEEDS TO BE ADDED HERE 
-
+             
             if (squares[squareNum].Name == "Black Hole")
             {
                 //BlackholeSquare.LandOn();
