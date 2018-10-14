@@ -137,7 +137,7 @@ namespace Object_Classes
         } // end SetUpBoard
 
 
-      /*  public static int whatTypeOfSquare(int squareNum)
+        public static int whatTypeOfSquare(int squareNum)
         {
             int[] playerupdate = new int[2];
             int pos = 0;
@@ -162,10 +162,9 @@ namespace Object_Classes
             }
             if (type == 0)
             {
-
-                FindDestSquare(wormHoles, squareNum, out pos, out fuel);
+                
             }
-        }*/
+        }
         /// <summary>
         /// Finds the destination square and the amount of fuel used for either a 
         /// Wormhole or Blackhole Square.
