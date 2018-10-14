@@ -31,8 +31,8 @@ namespace Space_Race
              Output each player's details at end of the game
            */
             Board.SetUpBoard();
-            Console.WriteLine("     This game is for 2 to 6 players.");
-            Console.Write("     How many players (2-6): ");
+            Console.WriteLine("\tThis game is for 2 to 6 players.");
+            Console.Write("\tHow many players (2-6): ");
             int number = int.Parse(Console.ReadLine());
             if (number > 6 || number < 2)
             {
@@ -40,24 +40,24 @@ namespace Space_Race
                 {
                     Console.WriteLine("Number of Players is not beetween 2-6");
                     number = int.Parse(Console.ReadLine()); // add tryparse
+                    Console.Write("\n\n");
                 }
             }
 
             SpaceRaceGame.NumberOfPlayers = number;
             SpaceRaceGame.SetUpPlayers();
             
-            Console.Write("Press Enter to play a round ...");
+            Console.WriteLine("\nPress Enter to play a round ...\n");
             Console.ReadKey();
             SpaceRaceGame.PlayOneRound();
             string roundName = "First";
-            for (int i = 0; i > 1; i++)
+            for (int i = 0; i < 20; i++)
             {
-                Console.WriteLine(" {0} Round", roundName);
+                Console.WriteLine("\t{0} Round\n", roundName);
                 roundName = "Next";
-                Console.WriteLine("");
                 for(int j = 0; j < number; j++)
                 {
-                    Console.WriteLine("{0} on square ... with ... yottawatt of power remaining");
+                    Console.WriteLine("\t{0} on square ... with ... yottawatt of power remaining", SpaceRaceGame.Players[j].Name);
                 }
                 PressEnter();
             }
@@ -71,7 +71,7 @@ namespace Space_Race
         /// </summary>
         static void DisplayIntroductionMessage()
         {
-            Console.WriteLine("     Welcome to Space Race.\n");
+            Console.WriteLine("\n\tWelcome to Space Race.\n");
         } //end DisplayIntroductionMessage
 
         /// <summary>
