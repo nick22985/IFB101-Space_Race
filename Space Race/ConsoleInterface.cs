@@ -30,6 +30,7 @@ namespace Space_Race
              Determine if anyone has won
              Output each player's details at end of the game
            */
+           //dsaffsdsdf
             Board.SetUpBoard();
             Console.WriteLine("\tThis game is for 2 to 6 players.");
             Console.Write("\tHow many players (2-6): ");
