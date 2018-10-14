@@ -17,6 +17,7 @@ namespace Space_Race
         /// <param name="args"></param>
         static void Main(string[] args)
         {      
+            //awsdwasd
              DisplayIntroductionMessage();
             /*                    
              Set up the board in Board class (Board.SetUpBoard)
