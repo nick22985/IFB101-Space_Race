@@ -32,7 +32,7 @@ namespace Space_Race
            */
             Board.SetUpBoard();
             Console.WriteLine("     This game is for 2 to 6 players.");
-            Console.WriteLine("     How many players (2-6): ");
+            Console.Write("     How many players (2-6): ");
             int number = int.Parse(Console.ReadLine());
             if (number > 6 || number < 2)
             {
@@ -49,7 +49,18 @@ namespace Space_Race
             Console.Write("Press Enter to play a round ...");
             Console.ReadKey();
             SpaceRaceGame.PlayOneRound();
-            PressEnter();
+            string roundName = "First";
+            for (int i = 0; i > 1; i++)
+            {
+                Console.WriteLine(" {0} Round", roundName);
+                roundName = "Next";
+                Console.WriteLine("");
+                for(int j = 0; j < number; j++)
+                {
+                    Console.WriteLine("{0} on square ... with ... yottawatt of power remaining");
+                }
+                PressEnter();
+            }
         }//end Main
 
    
