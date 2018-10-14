@@ -49,10 +49,10 @@ namespace Space_Race
             
             Console.WriteLine("\nPress Enter to play a round ...\n");
             Console.ReadKey();
-            SpaceRaceGame.PlayOneRound();
             string roundName = "First";
             for (int i = 0; i < 20; i++)
             {
+                SpaceRaceGame.PlayOneRound();
                 Console.WriteLine("\t{0} Round\n", roundName);
                 roundName = "Next";
                 for(int j = 0; j < number; j++)
