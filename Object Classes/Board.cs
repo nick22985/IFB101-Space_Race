@@ -140,8 +140,6 @@ namespace Object_Classes
         public static int whatTypeOfSquare(int squareNum)
         {
             int[] playerupdate = new int[2];
-            int pos = 0;
-            int fuel = 0;
             int type = -1;
             for (int i = 0; i < NUMBER_OF_SQUARES; i++)
             {

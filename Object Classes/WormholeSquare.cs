@@ -20,7 +20,7 @@ namespace Object_Classes {
         {
             return Board.Squares[destination];
         }//end NextSquare
-
+        //
         /// <summary>  
         /// Landing on WormHole or BlackHole Square uses a specified
         ///   amount of fuel defined in Board class as well as
