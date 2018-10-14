@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 
 namespace Object_Classes {
     /// <summary>
@@ -38,6 +39,5 @@ namespace Object_Classes {
 
             player.ConsumeFuel(fuelUsed);
         } //end LandOn
-
     }//end WormholeSquare
 }
