@@ -169,9 +169,8 @@ namespace Object_Classes
             d2.Reset();
             int dice = temp1 + temp2;
             position = position + dice;
+               
 
-            //Board.FindDestSquare(Board.squares[], position); // Calculating fuel and board position.
-            
 
             ReachedFinalSquare();
         } // end Play.
