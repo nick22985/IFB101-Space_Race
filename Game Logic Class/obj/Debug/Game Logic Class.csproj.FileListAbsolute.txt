@@ -25,3 +25,12 @@ C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\Game Logic Class\obj
 C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\Game Logic Class\obj\Debug\Game Logic Class.dll
 C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\Game Logic Class\obj\Debug\Game Logic Class.pdb
 C:\Users\Nick22985\Source\Repos\nick22985\IFB101-Space_Race\Game Logic Class\obj\Debug\Game Logic Class.csprojAssemblyReference.cache
+C:\Users\Josh\Source\Repos\nick22985\IFB101-Space_Race\Game Logic Class\bin\Debug\Game Logic Class.dll
+C:\Users\Josh\Source\Repos\nick22985\IFB101-Space_Race\Game Logic Class\bin\Debug\Game Logic Class.pdb
+C:\Users\Josh\Source\Repos\nick22985\IFB101-Space_Race\Game Logic Class\bin\Debug\Object Classes.dll
+C:\Users\Josh\Source\Repos\nick22985\IFB101-Space_Race\Game Logic Class\bin\Debug\Object Classes.pdb
+C:\Users\Josh\Source\Repos\nick22985\IFB101-Space_Race\Game Logic Class\obj\Debug\Game Logic Class.csprojAssemblyReference.cache
+C:\Users\Josh\Source\Repos\nick22985\IFB101-Space_Race\Game Logic Class\obj\Debug\Game Logic Class.csproj.CoreCompileInputs.cache
+C:\Users\Josh\Source\Repos\nick22985\IFB101-Space_Race\Game Logic Class\obj\Debug\Game Logic Class.csproj.CopyComplete
+C:\Users\Josh\Source\Repos\nick22985\IFB101-Space_Race\Game Logic Class\obj\Debug\Game Logic Class.dll
+C:\Users\Josh\Source\Repos\nick22985\IFB101-Space_Race\Game Logic Class\obj\Debug\Game Logic Class.pdb
