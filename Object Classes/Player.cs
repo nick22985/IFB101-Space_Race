@@ -170,7 +170,7 @@ namespace Object_Classes
             int dice = temp1 + temp2;
             position = position + dice;
                
-            if 
+            
 
             ReachedFinalSquare();
         } // end Play.

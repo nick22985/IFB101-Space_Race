@@ -158,12 +158,14 @@ namespace Object_Classes
                 else
                 {
                     type = 2;
+                    return type;
                 }
             }
             if (type == 0)
             {
-                
+                return type;
             }
+            return type;
         }
         /// <summary>
         /// Finds the destination square and the amount of fuel used for either a 
