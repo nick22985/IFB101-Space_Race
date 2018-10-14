@@ -57,7 +57,7 @@ namespace Space_Race
                 roundName = "Next";
                 for(int j = 0; j < number; j++)
                 {
-                    Console.WriteLine("\t{0} on square ... with ... yottawatt of power remaining", SpaceRaceGame.Players[j].Name);
+                    Console.WriteLine("\t{0} on square {1} with {2} yottawatt of power remaining", SpaceRaceGame.Players[j].Name, SpaceRaceGame.Players[j].Position, SpaceRaceGame.Players[j].RocketFuel);
                 }
                 PressEnter();
             }
