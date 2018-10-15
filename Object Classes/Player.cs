@@ -169,6 +169,7 @@ namespace Object_Classes
             d2.Reset();
             int dice = temp1 + temp2;
             position = position + dice;
+            location = Board.Squares[position];
             location.LandOn(this);
             ReachedFinalSquare();
         } // end Play.

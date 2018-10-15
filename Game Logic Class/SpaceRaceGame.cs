@@ -78,22 +78,6 @@ namespace Game_Logic_Class
         /// </summary>
         public static void PlayOneRound()
         {
-            /*int roundCounter = 1;
-            for (int i = 0; i < numberOfPlayers; i++)
-            {
-                int totalDieNumber = 0;
-                int type = -1;
-                Die dieResult1 = new Die(4);
-                Die dieResult2 = new Die(4);
-                int dieface1 = dieResult1.Roll();
-                int dieface2 = dieResult2.Roll();
-                totalDieNumber = dieface1 + dieface2;
-                players[i].Position = totalDieNumber + players[i].Position;
-                type = Board.whatTypeOfSquare(players[i].Position);
-                dieResult1.Reset();
-                dieResult2.Reset();
-            }
-            roundCounter++;*/
             for (int i = 0; i < numberOfPlayers; i++)
             {
                 players[i].Play(die1, die2);
