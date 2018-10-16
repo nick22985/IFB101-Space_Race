@@ -61,7 +61,7 @@ namespace Space_Race
                 roundName = "Next";
                 for(int j = 0; j < number; j++)
                 {
-                    Console.WriteLine("\t{0} on square {1} with {2} yottawatt of power remaining", SpaceRaceGame.Players[j].Name, SpaceRaceGame.Players[j].Position, SpaceRaceGame.Players[j].RocketFuel);
+                    Console.WriteLine("\t{0} on square {1} with {2} yattowatt of power remaining", SpaceRaceGame.Players[j].Name, SpaceRaceGame.Players[j].Position, SpaceRaceGame.Players[j].RocketFuel);
                     if(SpaceRaceGame.Players[j].AtFinish == true)
                     {
                          gamefinished = true;
@@ -75,8 +75,19 @@ namespace Space_Race
 
             }
 
-            Console.WriteLine("GAME OVER!");
-            Console.ReadKey();
+            Console.WriteLine("\n\n\tThe following player(s) finished the game\n");
+            for(int i = 0; i < SpaceRaceGame.NumberOfPlayers; i++)
+            {
+                if(SpaceRaceGame.Players[i].AtFinish == true)
+                {
+                    Console.WriteLine("\t\t{0}\n", SpaceRaceGame.Players[i].Name);
+                }
+            }
+            Console.WriteLine("Individual players finished with the at the locations specified");
+            for (int i = 0; i < SpaceRaceGame.NumberOfPlayers; i++)
+            {
+                Console.WriteLine("\n\t\t{0} with {1} yattowatt of power at square {2}\n", SpaceRaceGame.Players[i].Name, SpaceRaceGame.Players[i].RocketFuel, SpaceRaceGame.Players[i].Position);
+            }
             PressEnter();
         }//end Main
 
