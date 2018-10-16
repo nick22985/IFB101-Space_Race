@@ -36,7 +36,7 @@ namespace Space_Race
             Board.SetUpBoard();
             Console.WriteLine("\tThis game is for 2 to 6 players.");
             Console.Write("\tHow many players (2-6): ");
-            int number = int.Parse(Console.ReadLine());
+            int number = int.Parse(Console.ReadLine()); // add try PASS
             if (number > SpaceRaceGame.MAX_PLAYERS || number < SpaceRaceGame.MIN_PLAYERS)
             {
                 while (number > 6 || number < 2)
