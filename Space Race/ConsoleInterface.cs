@@ -56,7 +56,15 @@ namespace Space_Race
                 Console.ReadKey();
                 for(int j = 0; j < SpaceRaceGame.NumberOfPlayers; i++)
                 {
+                    if(SpaceRaceGame.Players[j].AtFinish == true)
+                    {
+                        Console.WriteLine("GAME OVER!");
+                        Console.ReadKey();
+                    }
+                    else
+                    {
 
+                    }
                 }
                 SpaceRaceGame.PlayOneRound();
                 Console.WriteLine("\t{0} Round\n", roundName);

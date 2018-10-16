@@ -168,14 +168,23 @@ namespace Object_Classes
             int temp2 = d2.Roll();
             d2.Reset();
             int dice = temp1 + temp2;   
-            position = position + dice;
+            Position = Position + dice;
+//            if (position > 55)
+
+            //{
+
+           // }
             ReachedFinalSquare();
-            if(ReachedFinalSquare() == true)
+            if (ReachedFinalSquare() == true)
             {
                 atFinish = true;
             }
-            location = Board.Squares[position];
-            location.LandOn(this);
+            else
+            {
+                
+                location = Board.Squares[Position];
+                location.LandOn(this);
+            }
 
         } // end Play.
 
