@@ -37,7 +37,7 @@ namespace Space_Race
             Console.WriteLine("\tThis game is for 2 to 6 players.");
             Console.Write("\tHow many players (2-6): ");
             int number = int.Parse(Console.ReadLine());
-            if (number > 6 || number < 2)
+            if (number > SpaceRaceGame.MAX_PLAYERS || number < SpaceRaceGame.MIN_PLAYERS)
             {
                 while (number > 6 || number < 2)
                 {
@@ -49,12 +49,15 @@ namespace Space_Race
 
             SpaceRaceGame.NumberOfPlayers = number;
             SpaceRaceGame.SetUpPlayers();
-            
-            Console.WriteLine("\nPress Enter to play a round ...\n");
-            Console.ReadKey();
             string roundName = "First";
             for (int i = 0; i < 20; i++)
             {
+                Console.WriteLine("\nPress Enter to play a round ...\n");
+                Console.ReadKey();
+                for(int j = 0; j < SpaceRaceGame.NumberOfPlayers; i++)
+                {
+
+                }
                 SpaceRaceGame.PlayOneRound();
                 Console.WriteLine("\t{0} Round\n", roundName);
                 roundName = "Next";
@@ -62,8 +65,9 @@ namespace Space_Race
                 {
                     Console.WriteLine("\t{0} on square {1} with {2} yottawatt of power remaining", SpaceRaceGame.Players[j].Name, SpaceRaceGame.Players[j].Position, SpaceRaceGame.Players[j].RocketFuel);
                 }
-                PressEnter();
+
             }
+            PressEnter();
         }//end Main
 
    //wassd

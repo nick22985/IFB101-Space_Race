@@ -133,7 +133,7 @@ namespace Object_Classes
 
             // Create the 'finish' square.
             squares[FINISH_SQUARE_NUMBER] = new Square("Finish", FINISH_SQUARE_NUMBER);
-            
+            squares[START_SQUARE_NUMBER] = new Square("Start", START_SQUARE_NUMBER);
         } // end SetUpBoard
 
 

@@ -65,6 +65,7 @@ namespace Game_Logic_Class
             for (int i = 0; i < numberOfPlayers; i++)
             {
                 players[i].RocketFuel = Player.INITIAL_FUEL_AMOUNT;
+                players[i].Location = Board.Squares[0];
             }
             // for number of players
             //      create a new player object
@@ -81,7 +82,6 @@ namespace Game_Logic_Class
             for (int i = 0; i < numberOfPlayers; i++)
             {
                 players[i].Play(die1, die2);
-
             }
             
 
