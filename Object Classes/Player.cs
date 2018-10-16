@@ -168,21 +168,21 @@ namespace Object_Classes
             int temp2 = d2.Roll();
             d2.Reset();
             int dice = temp1 + temp2;   
-            Position = Position + dice;
-//            if (position > 55)
+            position = position + dice;
+            //            if (position > 55)
 
             //{
-
-           // }
+            // }
             ReachedFinalSquare();
             if (ReachedFinalSquare() == true)
             {
-                atFinish = true;
+                position = 55;
+                AtFinish = true;
             }
             else
             {
                 
-                location = Board.Squares[Position];
+                location = Board.Squares[position];
                 location.LandOn(this);
             }
 
@@ -217,11 +217,7 @@ namespace Object_Classes
         /// <returns>true if reached the Final Square</returns>
         private bool ReachedFinalSquare()
         {
-            if (position > Board.FINISH_SQUARE_NUMBER)
-            {
-                return true;
-            }
-            if (fuelLeft == 0)
+            if (Position >= Board.FINISH_SQUARE_NUMBER)
             {
                 return true;
             }

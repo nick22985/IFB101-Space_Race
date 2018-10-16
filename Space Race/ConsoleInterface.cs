@@ -50,32 +50,33 @@ namespace Space_Race
             SpaceRaceGame.NumberOfPlayers = number;
             SpaceRaceGame.SetUpPlayers();
             string roundName = "First";
-            for (int i = 0; i < 20; i++)
+            bool gamefinished = false;
+            for (int i = 0; i < 1000; i++)
             {
+
                 Console.WriteLine("\nPress Enter to play a round ...\n");
                 Console.ReadKey();
-                for(int j = 0; j < SpaceRaceGame.NumberOfPlayers; i++)
-                {
-                    if(SpaceRaceGame.Players[j].AtFinish == true)
-                    {
-                        Console.WriteLine("GAME OVER!");
-                        Console.ReadKey();
-                    }
-                    else
-                    {
-                        goto allg;
-                    }
-                }
-                allg:
                 SpaceRaceGame.PlayOneRound();
                 Console.WriteLine("\t{0} Round\n", roundName);
                 roundName = "Next";
                 for(int j = 0; j < number; j++)
                 {
                     Console.WriteLine("\t{0} on square {1} with {2} yottawatt of power remaining", SpaceRaceGame.Players[j].Name, SpaceRaceGame.Players[j].Position, SpaceRaceGame.Players[j].RocketFuel);
+                    if(SpaceRaceGame.Players[j].AtFinish == true)
+                    {
+                         gamefinished = true;
+                    }
+                }
+                if(gamefinished == true)
+                {
+                    break;
+
                 }
 
             }
+
+            Console.WriteLine("GAME OVER!");
+            Console.ReadKey();
             PressEnter();
         }//end Main
 
