@@ -63,9 +63,10 @@ namespace Space_Race
                     }
                     else
                     {
-
+                        goto yeah;
                     }
                 }
+                yeah:
                 SpaceRaceGame.PlayOneRound();
                 Console.WriteLine("\t{0} Round\n", roundName);
                 roundName = "Next";
