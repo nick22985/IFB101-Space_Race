@@ -36,7 +36,7 @@ namespace Space_Race
             Board.SetUpBoard();
             Console.WriteLine("\tThis game is for 2 to 6 players.");
             Console.Write("\tHow many players (2-6): ");
-            int number = int.Parse(Console.ReadLine());
+            int number = int.Parse(Console.ReadLine()); // add try PASS
             if (number > SpaceRaceGame.MAX_PLAYERS || number < SpaceRaceGame.MIN_PLAYERS)
             {
                 while (number > 6 || number < 2)
@@ -50,31 +50,43 @@ namespace Space_Race
             SpaceRaceGame.NumberOfPlayers = number;
             SpaceRaceGame.SetUpPlayers();
             string roundName = "First";
-            for (int i = 0; i < 20; i++)
+            bool gamefinished = false;
+            for (int i = 0; i < 1000; i++)
             {
+
                 Console.WriteLine("\nPress Enter to play a round ...\n");
                 Console.ReadKey();
-                for(int j = 0; j < SpaceRaceGame.NumberOfPlayers; i++)
-                {
-                    if(SpaceRaceGame.Players[j].AtFinish == true)
-                    {
-                        Console.WriteLine("GAME OVER!");
-                        Console.ReadKey();
-                    }
-                    else
-                    {
-                        goto yeah;
-                    }
-                }
-                yeah:
                 SpaceRaceGame.PlayOneRound();
                 Console.WriteLine("\t{0} Round\n", roundName);
                 roundName = "Next";
                 for(int j = 0; j < number; j++)
                 {
-                    Console.WriteLine("\t{0} on square {1} with {2} yottawatt of power remaining", SpaceRaceGame.Players[j].Name, SpaceRaceGame.Players[j].Position, SpaceRaceGame.Players[j].RocketFuel);
+                    Console.WriteLine("\t{0} on square {1} with {2} yattowatt of power remaining", SpaceRaceGame.Players[j].Name, SpaceRaceGame.Players[j].Position, SpaceRaceGame.Players[j].RocketFuel);
+                    if(SpaceRaceGame.Players[j].AtFinish == true)
+                    {
+                         gamefinished = true;
+                    }
+                }
+                if(gamefinished == true)
+                {
+                    break;
+
                 }
 
+            }
+
+            Console.WriteLine("\n\n\tThe following player(s) finished the game\n");
+            for(int i = 0; i < SpaceRaceGame.NumberOfPlayers; i++)
+            {
+                if(SpaceRaceGame.Players[i].AtFinish == true)
+                {
+                    Console.WriteLine("\t\t{0}\n", SpaceRaceGame.Players[i].Name);
+                }
+            }
+            Console.WriteLine("Individual players finished with the at the locations specified");
+            for (int i = 0; i < SpaceRaceGame.NumberOfPlayers; i++)
+            {
+                Console.WriteLine("\n\t\t{0} with {1} yattowatt of power at square {2}\n", SpaceRaceGame.Players[i].Name, SpaceRaceGame.Players[i].RocketFuel, SpaceRaceGame.Players[i].Position);
             }
             PressEnter();
         }//end Main

@@ -82,6 +82,7 @@ namespace Game_Logic_Class
             for (int i = 0; i < numberOfPlayers; i++)
             {
                 players[i].Play(die1, die2);
+                
             }
             
 
