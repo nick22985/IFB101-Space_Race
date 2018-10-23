@@ -28,11 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBox = new System.Windows.Forms.ComboBox();
             this.gamereset = new System.Windows.Forms.Button();
             this.RollDice = new System.Windows.Forms.Button();
             this.playersDataGridView = new System.Windows.Forms.DataGridView();
+            this.playerTokenImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.positionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rocketFuelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.playerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.singlestep = new System.Windows.Forms.GroupBox();
             this.SingleStepNo = new System.Windows.Forms.RadioButton();
             this.SingleStepYes = new System.Windows.Forms.RadioButton();
@@ -45,6 +52,7 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playersDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).BeginInit();
             this.singlestep.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +68,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.comboBox);
             this.splitContainer1.Panel2.Controls.Add(this.gamereset);
             this.splitContainer1.Panel2.Controls.Add(this.RollDice);
             this.splitContainer1.Panel2.Controls.Add(this.playersDataGridView);
@@ -100,6 +109,21 @@
             this.tableLayoutPanel.Size = new System.Drawing.Size(664, 661);
             this.tableLayoutPanel.TabIndex = 0;
             // 
+            // comboBox
+            // 
+            this.comboBox.FormattingEnabled = true;
+            this.comboBox.Items.AddRange(new object[] {
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.comboBox.Location = new System.Drawing.Point(114, 51);
+            this.comboBox.Name = "comboBox";
+            this.comboBox.Size = new System.Drawing.Size(44, 21);
+            this.comboBox.TabIndex = 1;
+            this.comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox_SelectedIndexChanged);
+            // 
             // gamereset
             // 
             this.gamereset.Location = new System.Drawing.Point(33, 626);
@@ -121,11 +145,56 @@
             // 
             // playersDataGridView
             // 
+            this.playersDataGridView.AllowUserToAddRows = false;
+            this.playersDataGridView.AllowUserToDeleteRows = false;
+            this.playersDataGridView.AutoGenerateColumns = false;
             this.playersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.playersDataGridView.Location = new System.Drawing.Point(18, 125);
+            this.playersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.playerTokenImageDataGridViewImageColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.positionDataGridViewTextBoxColumn,
+            this.rocketFuelDataGridViewTextBoxColumn});
+            this.playersDataGridView.DataSource = this.playerBindingSource;
+            this.playersDataGridView.Location = new System.Drawing.Point(3, 105);
             this.playersDataGridView.Name = "playersDataGridView";
-            this.playersDataGridView.Size = new System.Drawing.Size(176, 124);
+            this.playersDataGridView.RowHeadersVisible = false;
+            this.playersDataGridView.Size = new System.Drawing.Size(213, 124);
             this.playersDataGridView.TabIndex = 5;
+            // 
+            // playerTokenImageDataGridViewImageColumn
+            // 
+            this.playerTokenImageDataGridViewImageColumn.DataPropertyName = "PlayerTokenImage";
+            this.playerTokenImageDataGridViewImageColumn.HeaderText = "";
+            this.playerTokenImageDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.playerTokenImageDataGridViewImageColumn.Name = "playerTokenImageDataGridViewImageColumn";
+            this.playerTokenImageDataGridViewImageColumn.ReadOnly = true;
+            this.playerTokenImageDataGridViewImageColumn.Width = 20;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // positionDataGridViewTextBoxColumn
+            // 
+            this.positionDataGridViewTextBoxColumn.DataPropertyName = "Position";
+            this.positionDataGridViewTextBoxColumn.HeaderText = "Square";
+            this.positionDataGridViewTextBoxColumn.Name = "positionDataGridViewTextBoxColumn";
+            this.positionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.positionDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // rocketFuelDataGridViewTextBoxColumn
+            // 
+            this.rocketFuelDataGridViewTextBoxColumn.DataPropertyName = "RocketFuel";
+            this.rocketFuelDataGridViewTextBoxColumn.HeaderText = "Fuel";
+            this.rocketFuelDataGridViewTextBoxColumn.Name = "rocketFuelDataGridViewTextBoxColumn";
+            this.rocketFuelDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rocketFuelDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // playerBindingSource
+            // 
+            this.playerBindingSource.DataSource = typeof(Object_Classes.Player);
             // 
             // singlestep
             // 
@@ -214,6 +283,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.playersDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).EndInit();
             this.singlestep.ResumeLayout(false);
             this.singlestep.PerformLayout();
             this.ResumeLayout(false);
@@ -234,6 +304,12 @@
         private System.Windows.Forms.Button RollDice;
         private System.Windows.Forms.DataGridView playersDataGridView;
         private System.Windows.Forms.Button gamereset;
+        private System.Windows.Forms.ComboBox comboBox;
+        private System.Windows.Forms.BindingSource playerBindingSource;
+        private System.Windows.Forms.DataGridViewImageColumn playerTokenImageDataGridViewImageColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn positionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rocketFuelDataGridViewTextBoxColumn;
     }
 }
 

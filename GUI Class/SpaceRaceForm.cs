@@ -30,8 +30,8 @@ namespace GUI_Class
             SetUpGUIGameBoard();
             SetupPlayersDataGridView();
             DetermineNumberOfPlayers();
-            //SpaceRaceGame.SetUpPlayers();
-            //PrepareToPlayGame();
+            SpaceRaceGame.SetUpPlayers();
+            PrepareToPlay();
         }
 
 
@@ -145,9 +145,13 @@ namespace GUI_Class
         /// </summary>
         private void DetermineNumberOfPlayers()
         {
-            // Store the SelectedItem property of the ComboBox in a string
-
-            // Parse string to a number
+            // Store the SelectedItem property of the ComboBox in a string  
+            if (comboBox.SelectedItem != null)
+            {
+                SpaceRaceGame.NumberOfPlayers = int.Parse(comboBox.SelectedItem.ToString());
+            }
+            else
+            { }//Value is null
 
             // Set the NumberOfPlayers in the SpaceRaceGame class to that number
 
@@ -165,7 +169,8 @@ namespace GUI_Class
             // until you can play a game through to the finish square
             // and you want to implement the Reset button event handler.
             //
-
+            
+            comboBox.SelectedIndex = 0;
             UpdatePlayersGuiLocations(TypeOfGuiUpdate.AddPlayer);
 
         }//end PrepareToPlay()
@@ -268,6 +273,11 @@ namespace GUI_Class
         private void RollDice_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DetermineNumberOfPlayers();
         }
     }// end class
 }
