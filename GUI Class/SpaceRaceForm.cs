@@ -169,7 +169,7 @@ namespace GUI_Class
             // until you can play a game through to the finish square
             // and you want to implement the Reset button event handler.
             //
-            
+
             comboBox.SelectedIndex = 0;
             UpdatePlayersGuiLocations(TypeOfGuiUpdate.AddPlayer);
 
@@ -272,7 +272,10 @@ namespace GUI_Class
 
         private void RollDice_Click(object sender, EventArgs e)
         {
-
+            UpdatePlayersGuiLocations(TypeOfGuiUpdate.AddPlayer);
+            SpaceRaceGame.PlayOneRound();
+            UpdatePlayersGuiLocations(TypeOfGuiUpdate.AddPlayer);
+            UpdatesPlayersDataGridView();
         }
 
         private void comboBox_SelectedIndexChanged(object sender, EventArgs e)

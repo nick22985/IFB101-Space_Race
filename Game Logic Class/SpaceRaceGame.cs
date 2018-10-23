@@ -66,6 +66,9 @@ namespace Game_Logic_Class
             {
                 players[i].RocketFuel = Player.INITIAL_FUEL_AMOUNT;
                 players[i].Location = Board.Squares[0];
+                players[i].PlayerTokenColour = playerTokenColours[i];
+
+
             }
             // for number of players
             //      create a new player object
@@ -77,7 +80,7 @@ namespace Game_Logic_Class
         /// <summary>
         ///  Plays one round of a game
         /// </summary>
-        
+
         public static void PlayOneRound()
         {
             bool finishedfromfuel = false;
@@ -93,14 +96,15 @@ namespace Game_Logic_Class
                 {
                     finishedfromfuel = true;
                 }
-                
+
             }
-            if(finishedfromfuel == true)
+            if (finishedfromfuel == true)
             {
 
             }
-           
-        }
 
-    }//end SnakesAndLadders
+            //}
+
+        }//end SnakesAndLadders
+    }
 }

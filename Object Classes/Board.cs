@@ -110,13 +110,13 @@ namespace Object_Classes
             // Creates Black hole Squares
             for (int i = 0; i < ((blackHoles.Length) / 3); i++)
             {
-                squares[blackHoles[i, 0]] = new BlackholeSquare("Black Hole", blackHoles[i, 0], blackHoles[i, 1], blackHoles[i, 2]);
+                squares[blackHoles[i, 0]] = new BlackholeSquare(blackHoles[i, 0].ToString(), blackHoles[i, 0], blackHoles[i, 1], blackHoles[i, 2]);
             }
 
             // Creates Wormhole Squares
             for (int i = 0; i < 7; i++)
             {
-                squares[wormHoles[i, 0]] = new WormholeSquare("Worm Hole", wormHoles[i, 0], wormHoles[i, 1], wormHoles[i, 2]);
+                squares[wormHoles[i, 0]] = new WormholeSquare(wormHoles[i, 0].ToString(), wormHoles[i, 0], wormHoles[i, 1], wormHoles[i, 2]);
             }
 
             // Creates normal squares
@@ -124,7 +124,7 @@ namespace Object_Classes
             {
                 if (squares[i] == null)
                 {
-                    squares[i] = new Square("Ordinary Square", i);
+                    squares[i] = new Square(i.ToString(), i);
                 }
             }
             //   Need to call the appropriate constructor for each square

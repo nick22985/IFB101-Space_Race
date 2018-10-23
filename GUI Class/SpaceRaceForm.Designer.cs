@@ -47,6 +47,7 @@
             this.numberofplayerstext = new System.Windows.Forms.Label();
             this.playerstext = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -120,8 +121,9 @@
             "6"});
             this.comboBox.Location = new System.Drawing.Point(114, 51);
             this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(44, 21);
+            this.comboBox.Size = new System.Drawing.Size(35, 21);
             this.comboBox.TabIndex = 1;
+            this.comboBox.Text = "2";
             this.comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox_SelectedIndexChanged);
             // 
             // gamereset
@@ -155,7 +157,7 @@
             this.positionDataGridViewTextBoxColumn,
             this.rocketFuelDataGridViewTextBoxColumn});
             this.playersDataGridView.DataSource = this.playerBindingSource;
-            this.playersDataGridView.Location = new System.Drawing.Point(3, 105);
+            this.playersDataGridView.Location = new System.Drawing.Point(0, 126);
             this.playersDataGridView.Name = "playersDataGridView";
             this.playersDataGridView.RowHeadersVisible = false;
             this.playersDataGridView.Size = new System.Drawing.Size(213, 124);
@@ -198,11 +200,13 @@
             // 
             // singlestep
             // 
+            this.singlestep.BackColor = System.Drawing.SystemColors.ControlDark;
             this.singlestep.Controls.Add(this.SingleStepNo);
             this.singlestep.Controls.Add(this.SingleStepYes);
+            this.singlestep.Enabled = false;
             this.singlestep.Location = new System.Drawing.Point(45, 354);
             this.singlestep.Name = "singlestep";
-            this.singlestep.Size = new System.Drawing.Size(133, 54);
+            this.singlestep.Size = new System.Drawing.Size(140, 55);
             this.singlestep.TabIndex = 4;
             this.singlestep.TabStop = false;
             this.singlestep.Text = "Single Step?";
@@ -232,10 +236,10 @@
             // spaceracetitle
             // 
             this.spaceracetitle.AutoSize = true;
-            this.spaceracetitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.spaceracetitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.spaceracetitle.Location = new System.Drawing.Point(39, 9);
             this.spaceracetitle.Name = "spaceracetitle";
-            this.spaceracetitle.Size = new System.Drawing.Size(155, 31);
+            this.spaceracetitle.Size = new System.Drawing.Size(132, 25);
             this.spaceracetitle.TabIndex = 1;
             this.spaceracetitle.Text = "SpaceRace";
             // 
@@ -251,9 +255,10 @@
             // playerstext
             // 
             this.playerstext.AutoSize = true;
-            this.playerstext.Location = new System.Drawing.Point(87, 89);
+            this.playerstext.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playerstext.Location = new System.Drawing.Point(65, 98);
             this.playerstext.Name = "playerstext";
-            this.playerstext.Size = new System.Drawing.Size(41, 13);
+            this.playerstext.Size = new System.Drawing.Size(91, 25);
             this.playerstext.TabIndex = 3;
             this.playerstext.Text = "Players";
             // 
@@ -310,6 +315,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn positionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rocketFuelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

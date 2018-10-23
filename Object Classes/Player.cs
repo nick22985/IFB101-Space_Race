@@ -10,7 +10,7 @@ namespace Object_Classes
     /// </summary>
     public class Player
     {
-        public const int INITIAL_FUEL_AMOUNT = 5;
+        public const int INITIAL_FUEL_AMOUNT = 60;
 
         // name of the player
         private string name;
