@@ -13,6 +13,7 @@ namespace GUI_Class
         // The numbers of rows and columns on the screen.
         const int NUM_OF_ROWS = 7;
         const int NUM_OF_COLUMNS = 8;
+        int mapnumbrun = 0;
 
         // When we update what's on the screen, we show the movement of a player 
         // by removing them from their old square and adding them to their new square.
@@ -115,12 +116,12 @@ namespace GUI_Class
         private static void MapSquareNumToScreenRowAndColumn(int squareNum, out int screenRow, out int screenCol)
         {
             // Code needs to be added here to do the mapping
-
-            // Makes the compiler happy - these two lines below need to deleted 
-            //    once mapping code is written above
-            screenRow = 0;
-            screenCol = 0;
-
+            screenCol = squareNum % 8;
+            screenRow = 6 - (squareNum / 8);
+            if (screenRow == 1 || screenRow == 3 || screenRow == 5)
+            {
+                screenCol = 7 - screenCol;
+            }
         }//end MapSquareNumToScreenRowAndColumn
 
 
@@ -264,5 +265,9 @@ namespace GUI_Class
             RefreshBoardTablePanelLayout();//must be the last line in this method. Do not put inside above loop.
         } //end UpdatePlayersGuiLocations
 
+        private void RollDice_Click(object sender, EventArgs e)
+        {
+
+        }
     }// end class
 }

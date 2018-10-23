@@ -30,6 +30,9 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.gamereset = new System.Windows.Forms.Button();
+            this.RollDice = new System.Windows.Forms.Button();
+            this.playersDataGridView = new System.Windows.Forms.DataGridView();
             this.singlestep = new System.Windows.Forms.GroupBox();
             this.SingleStepNo = new System.Windows.Forms.RadioButton();
             this.SingleStepYes = new System.Windows.Forms.RadioButton();
@@ -37,15 +40,12 @@
             this.numberofplayerstext = new System.Windows.Forms.Label();
             this.playerstext = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
-            this.playersDataGridView = new System.Windows.Forms.DataGridView();
-            this.RollDice = new System.Windows.Forms.Button();
-            this.gamereset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.singlestep.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playersDataGridView)).BeginInit();
+            this.singlestep.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -99,6 +99,33 @@
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel.Size = new System.Drawing.Size(664, 661);
             this.tableLayoutPanel.TabIndex = 0;
+            // 
+            // gamereset
+            // 
+            this.gamereset.Location = new System.Drawing.Point(33, 626);
+            this.gamereset.Name = "gamereset";
+            this.gamereset.Size = new System.Drawing.Size(75, 23);
+            this.gamereset.TabIndex = 6;
+            this.gamereset.Text = "Game Reset";
+            this.gamereset.UseVisualStyleBackColor = true;
+            // 
+            // RollDice
+            // 
+            this.RollDice.Location = new System.Drawing.Point(83, 597);
+            this.RollDice.Name = "RollDice";
+            this.RollDice.Size = new System.Drawing.Size(75, 23);
+            this.RollDice.TabIndex = 0;
+            this.RollDice.Text = "Roll Dice";
+            this.RollDice.UseVisualStyleBackColor = true;
+            this.RollDice.Click += new System.EventHandler(this.RollDice_Click);
+            // 
+            // playersDataGridView
+            // 
+            this.playersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.playersDataGridView.Location = new System.Drawing.Point(18, 125);
+            this.playersDataGridView.Name = "playersDataGridView";
+            this.playersDataGridView.Size = new System.Drawing.Size(176, 124);
+            this.playersDataGridView.TabIndex = 5;
             // 
             // singlestep
             // 
@@ -172,32 +199,6 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // playersDataGridView
-            // 
-            this.playersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.playersDataGridView.Location = new System.Drawing.Point(18, 125);
-            this.playersDataGridView.Name = "playersDataGridView";
-            this.playersDataGridView.Size = new System.Drawing.Size(176, 124);
-            this.playersDataGridView.TabIndex = 5;
-            // 
-            // RollDice
-            // 
-            this.RollDice.Location = new System.Drawing.Point(83, 597);
-            this.RollDice.Name = "RollDice";
-            this.RollDice.Size = new System.Drawing.Size(75, 23);
-            this.RollDice.TabIndex = 0;
-            this.RollDice.Text = "Roll Dice";
-            this.RollDice.UseVisualStyleBackColor = true;
-            // 
-            // gamereset
-            // 
-            this.gamereset.Location = new System.Drawing.Point(33, 626);
-            this.gamereset.Name = "gamereset";
-            this.gamereset.Size = new System.Drawing.Size(75, 23);
-            this.gamereset.TabIndex = 6;
-            this.gamereset.Text = "Game Reset";
-            this.gamereset.UseVisualStyleBackColor = true;
-            // 
             // SpaceRaceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,9 +213,9 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.playersDataGridView)).EndInit();
             this.singlestep.ResumeLayout(false);
             this.singlestep.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.playersDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
