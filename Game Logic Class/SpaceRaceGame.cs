@@ -77,16 +77,29 @@ namespace Game_Logic_Class
         /// <summary>
         ///  Plays one round of a game
         /// </summary>
+        
         public static void PlayOneRound()
         {
+            bool finishedfromfuel = false;
             for (int i = 0; i < numberOfPlayers; i++)
             {
-                players[i].Play(die1, die2);
+
+                if (players[i].RocketFuel > 0)
+                {
+                    players[i].Play(die1, die2);
+                    finishedfromfuel = false;
+                }
+                else
+                {
+                    finishedfromfuel = true;
+                }
                 
             }
-            
+            if(finishedfromfuel == true)
+            {
 
-
+            }
+           
         }
 
     }//end SnakesAndLadders

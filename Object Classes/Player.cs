@@ -10,7 +10,7 @@ namespace Object_Classes
     /// </summary>
     public class Player
     {
-        public const int INITIAL_FUEL_AMOUNT = 60;
+        public const int INITIAL_FUEL_AMOUNT = 5;
 
         // name of the player
         private string name;
@@ -162,17 +162,13 @@ namespace Object_Classes
         /// <param name="d1">first die</param>
         /// <param name="d2">second die</param>
         public void Play(Die d1, Die d2)
-        {
+        {           
             int temp1 = d1.Roll();
             d1.Reset();
             int temp2 = d2.Roll();
             d2.Reset();
-            int dice = temp1 + temp2;   
+            int dice = temp1 + temp2;
             position = position + dice;
-            //            if (position > 55)
-
-            //{
-            // }
             ReachedFinalSquare();
             if (ReachedFinalSquare() == true)
             {
@@ -181,11 +177,11 @@ namespace Object_Classes
             }
             else
             {
-                
+
                 location = Board.Squares[position];
                 location.LandOn(this);
             }
-
+            
         } // end Play.
 
 

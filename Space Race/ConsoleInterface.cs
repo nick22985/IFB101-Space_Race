@@ -59,13 +59,25 @@ namespace Space_Race
                 SpaceRaceGame.PlayOneRound();
                 Console.WriteLine("\t{0} Round\n", roundName);
                 roundName = "Next";
+                int totalfuel = 0;
                 for(int j = 0; j < number; j++)
                 {
                     Console.WriteLine("\t{0} on square {1} with {2} yattowatt of power remaining", SpaceRaceGame.Players[j].Name, SpaceRaceGame.Players[j].Position, SpaceRaceGame.Players[j].RocketFuel);
-                    if(SpaceRaceGame.Players[j].AtFinish == true)
+                    // int overallpower = 0;
+                    //for (int k = 0; k < SpaceRaceGame.NumberOfPlayers; k++)
+                    //{
+                    //   overallpower = overallpower + SpaceRaceGame.Players[k].RocketFuel;
+                    //}
+                    totalfuel = totalfuel + SpaceRaceGame.Players[j].RocketFuel;
+                    if (SpaceRaceGame.Players[j].AtFinish == true)
                     {
                          gamefinished = true;
                     }
+
+                }
+                if(totalfuel == 0)
+                {
+                    gamefinished = true;
                 }
                 if(gamefinished == true)
                 {
