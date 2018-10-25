@@ -98,13 +98,9 @@ namespace Game_Logic_Class
                 }
 
             }
-            if (finishedfromfuel == true)
-            {
-
-            }
-
-            //}
 
         }//end SnakesAndLadders
+
+
     }
 }
