@@ -177,6 +177,7 @@ namespace Space_Race
                 Console.WriteLine("\n\t\t{0} with {1} yattowatt of power at square {2}\n", SpaceRaceGame.Players[i].Name, SpaceRaceGame.Players[i].RocketFuel, SpaceRaceGame.Players[i].Position);
             }
         }
+
         /// <summary>
         /// Displays a prompt and waits for a keypress.
         /// Pre:  none
