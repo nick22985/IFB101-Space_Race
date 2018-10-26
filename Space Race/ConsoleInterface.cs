@@ -32,10 +32,9 @@ namespace Space_Race
              Output each player's details at end of the game
            */
 
-
-
-
-
+            //The restart point in the case of user selecting yes for playing another game
+            Restart:
+            SpaceRaceGame.Players.Clear();
            //sets up board
             Board.SetUpBoard();
             //asks for the amount of player playing and passes the number to spaceracegame playercount
@@ -77,7 +76,8 @@ namespace Space_Race
             //displays the player(s) who reached the final square
             playersWhoFinshedDisplay();
             DisplayFinalStatistics();
-            PressEnter();
+            askForAnotherGame();
+            goto Restart;
         }//end Main
 
 
@@ -139,20 +139,36 @@ namespace Space_Race
         //asks player for the amount of players they want in the game (must be bewteen 6 and 2)
         static void askForPlayerAmount()
         {
+            askForPlayerNumStart:
             Console.WriteLine("\tThis game is for 2 to 6 players.");
             Console.Write("\tHow many players (2-6): ");
-            int playerCount = int.Parse(Console.ReadLine()); // add try PASS
-            if (playerCount > SpaceRaceGame.MAX_PLAYERS || playerCount < SpaceRaceGame.MIN_PLAYERS)
+            int playerCount;
+            string userinput = Console.ReadLine();
+            bool isCorrectInput = Int32.TryParse(userinput, out playerCount);
+            // int playerCount = int.Parse(Console.ReadLine()); // add try PASS
+            //checks if the user input is an int value (not null and is int)
+            if (isCorrectInput == true && userinput != null)
             {
-                while (playerCount > 6 || playerCount < 2)
+                // checks is user input is within the min and max amount of players
+                if (playerCount > SpaceRaceGame.MAX_PLAYERS || playerCount < SpaceRaceGame.MIN_PLAYERS)
                 {
-                    Console.WriteLine("Number of Players is not beetween 2-6");
-                    playerCount = int.Parse(Console.ReadLine()); // add tryparse
-                    Console.Write("\n\n");
-                }
+                    while (playerCount > 6 || playerCount < 2)
+                    {
+                        Console.WriteLine("\tNumber of Players is not beetween 2-6\n");
+                        Console.Write("\tHow many players (2-6): ");
+                        playerCount = int.Parse(Console.ReadLine()); // add tryparse
+                        Console.Write("\n\n");
+                    }
 
+                }
+                SpaceRaceGame.NumberOfPlayers = playerCount;
             }
-            SpaceRaceGame.NumberOfPlayers = playerCount;
+            else
+            {
+                //displays invalid input message
+                Console.WriteLine("\n\tInvalid Input!\n");
+                goto askForPlayerNumStart;
+            }
         }
 
         //displays all the players who reached the final square
@@ -178,15 +194,43 @@ namespace Space_Race
             }
         }
 
+
+        static void PressEnter()
+        {
+            Console.WriteLine("\tPress Enter to termintate program ...");
+            Console.ReadKey();
+            Environment.Exit(-1);
+        }
         /// <summary>
         /// Displays a prompt and waits for a keypress.
         /// Pre:  none
         /// Post: a key has been pressed.
         /// </summary>
-        static void PressEnter()
+        static void askForAnotherGame()
         {
-            Console.Write("\nPress Enter to terminate program ...");
-            Console.ReadLine();
+            Console.WriteLine("\n\tPress Enter key to continue ...");
+            Console.ReadKey();
+            TryDifferentInput:
+            Console.Write("\n\n\n\tPlay Again? (Y or N): ");
+            string playAnotherAnswer = Console.ReadLine();
+            int IsYes;
+            int IsNo;
+            IsYes = (String.Compare(playAnotherAnswer, "Y"));
+            IsNo = (String.Compare(playAnotherAnswer, "N"));
+            if (IsYes == 0)
+            {
+                
+            }
+            else if(IsNo == 0)
+            {
+                Console.WriteLine("\n\n\n\tThanks for playing Space Race.\n");
+                PressEnter();
+            }
+            else
+            {
+                Console.WriteLine("\tInvalid Input");
+                goto TryDifferentInput;
+            }
         } // end PressAny
 
 
