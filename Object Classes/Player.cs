@@ -177,7 +177,6 @@ namespace Object_Classes
             }
             else
             {
-
                 location = Board.Squares[position];
                 location.LandOn(this);
             }
