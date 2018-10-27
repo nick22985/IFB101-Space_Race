@@ -92,8 +92,9 @@ namespace Game_Logic_Class
             }
         } 
 
-        public static string showgameresults() {
-
+        public static string showgameresults()
+        {
+            
         }
 
         /// <summary>
