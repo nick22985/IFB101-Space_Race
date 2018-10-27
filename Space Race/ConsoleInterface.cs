@@ -141,9 +141,9 @@ namespace Space_Race
         }
 
         //displays players amount of fuel and location when called
-        static void displayRoundResultText(int j)
+        static void displayRoundResultText(int tempVar)
         {
-            Console.WriteLine("\t{0} on square {1} with {2} yattowatt of power remaining", SpaceRaceGame.Players[j].Name, SpaceRaceGame.Players[j].Position, SpaceRaceGame.Players[j].RocketFuel);
+            Console.WriteLine("\t{0} on square {1} with {2} yattowatt of power remaining", SpaceRaceGame.Players[tempVar].Name, SpaceRaceGame.Players[tempVar].Position, SpaceRaceGame.Players[tempVar].RocketFuel);
         }
 
         //asks player for the amount of players they want in the game (must be bewteen 6 and 2)
@@ -186,11 +186,11 @@ namespace Space_Race
         static void playersWhoFinshedDisplay()
         {
             Console.WriteLine("\n\n\tThe following player(s) finished the game\n");
-            for (int i = 0; i < SpaceRaceGame.NumberOfPlayers; i++)
+            for (int tempVar = 0; tempVar < SpaceRaceGame.NumberOfPlayers; tempVar++)
             {
-                if (SpaceRaceGame.Players[i].AtFinish == true)
+                if (SpaceRaceGame.Players[tempVar].AtFinish == true)
                 {
-                    Console.WriteLine("\t\t{0}\n", SpaceRaceGame.Players[i].Name);
+                    Console.WriteLine("\t\t{0}\n", SpaceRaceGame.Players[tempVar].Name);
                 }
             }
         }
@@ -199,24 +199,23 @@ namespace Space_Race
         static void displayFinalStatistics()
         {
             Console.WriteLine("Individual players finished with the at the locations specified");
-            for (int i = 0; i < SpaceRaceGame.NumberOfPlayers; i++)
+            for (int tempVar = 0; tempVar < SpaceRaceGame.NumberOfPlayers; tempVar++)
             {
-                Console.WriteLine("\n\t\t{0} with {1} yattowatt of power at square {2}\n", SpaceRaceGame.Players[i].Name, SpaceRaceGame.Players[i].RocketFuel, SpaceRaceGame.Players[i].Position);
+                Console.WriteLine("\n\t\t{0} with {1} yattowatt of power at square {2}\n", SpaceRaceGame.Players[tempVar].Name, SpaceRaceGame.Players[tempVar].RocketFuel, SpaceRaceGame.Players[tempVar].Position);
             }
         }
 
-
+        //when called displays message to terminate program, then waits for key press to terminate.
         static void PressEnter()
         {
             Console.WriteLine("\tPress Enter to termintate program ...");
             Console.ReadKey();
             Environment.Exit(-1);
         }
-        /// <summary>
-        /// Displays a prompt and waits for a keypress.
-        /// Pre:  none
-        /// Post: a key has been pressed.
-        /// </summary>
+
+        //displays promps to play another game
+        //if "y" or "Y" is inputed, a new game starts
+        //if anything else is inputed, the game pressEnter is called after message is displayed
         static void askForAnotherGame()
         {
             Console.WriteLine("\n\tPress Enter key to continue ...");
