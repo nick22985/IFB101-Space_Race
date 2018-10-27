@@ -272,30 +272,35 @@ namespace GUI_Class
             //       retrieve the SquareControl object with that square number
             //       using the typeOfGuiUpdate, update the appropriate element of 
             //          the ContainsPlayers array of the SquareControl object.
-            //          
-            if (typeOfGuiUpdate == TypeOfGuiUpdate.AddPlayer)
+            //     
+            for (int player = 0; player < SpaceRaceGame.NumberOfPlayers; player++)
             {
-                for (int i = 0; i < SpaceRaceGame.NumberOfPlayers; i++)
-                {
-                    GetSquareNumberOfPlayer(i);
-                    SquareControl.ContainsPlayers[1] 
-                }
-                
-            }
-            if (typeOfGuiUpdate == TypeOfGuiUpdate.RemovePlayer)
-            {
+                //find square number
+                int player_square_pos = GetSquareNumberOfPlayer(player);
+                // gets the square control at the currentsquare
+                SquareControl current_square = SquareControlAt(player_square_pos);
 
+                if (typeOfGuiUpdate == TypeOfGuiUpdate.AddPlayer)
+                {
+                    current_square.ContainsPlayers[player] = true;
+                }
+                if (typeOfGuiUpdate == TypeOfGuiUpdate.RemovePlayer)
+                {
+                    current_square.ContainsPlayers[player] = false;
+                }
             }
+
 
             RefreshBoardTablePanelLayout();//must be the last line in this method. Do not put inside above loop.
         } //end UpdatePlayersGuiLocations
 
         private void RollDice_Click(object sender, EventArgs e)
         {
-            UpdatePlayersGuiLocations(TypeOfGuiUpdate.AddPlayer);
+            UpdatePlayersGuiLocations(TypeOfGuiUpdate.RemovePlayer);
             SpaceRaceGame.PlayOneRound();
             UpdatePlayersGuiLocations(TypeOfGuiUpdate.AddPlayer);
             UpdatesPlayersDataGridView();
+
         }
 
         private void comboBox_SelectedIndexChanged(object sender, EventArgs e)

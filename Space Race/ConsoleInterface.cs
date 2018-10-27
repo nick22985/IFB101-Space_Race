@@ -45,33 +45,19 @@ namespace Space_Race
             //sets up players
             SpaceRaceGame.SetUpPlayers();
 
-            //a bool variable determining weather the game is finished or not
-            bool gamefinished = false;
-
             //starts an infinite loop until a player wins or no players have fuel
             while (true)
             {
                 displayPlayOneRoundOption();
                 displayRoundName();
                 SpaceRaceGame.PlayOneRound();
-                int totalfuel = 0;
                 //display all players location and fuel
                 for(int tempVar = 0; tempVar < SpaceRaceGame.NumberOfPlayers; tempVar++)
                 {
-                    displayRoundResultText(tempVar);
-                    totalfuel = totalfuel + SpaceRaceGame.Players[tempVar].RocketFuel;
-                    if (SpaceRaceGame.Players[tempVar].AtFinish == true)
-                    {
-                         gamefinished = true;
-                    }
-                }
-                //ends game if no players have fuel
-                if(totalfuel == 0)
-                {
-                    gamefinished = true;
+                    displayRoundResultText(tempVar); 
                 }
                 //breaks the loop when the game finishes
-                if(gamefinished == true)
+                if(SpaceRaceGame.GameFinished == true)
                 {
                     break;
                 }

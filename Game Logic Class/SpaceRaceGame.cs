@@ -64,6 +64,7 @@ namespace Game_Logic_Class
                 players[i].RocketFuel = Player.INITIAL_FUEL_AMOUNT;
                 players[i].Location = Board.Squares[0];
                 players[i].PlayerTokenColour = playerTokenColours[i];
+                players[i].HasPower = true;
             }
             // for number of players
             //      create a new player object
@@ -72,30 +73,53 @@ namespace Game_Logic_Class
 
         }
 
+        private static void IsGameFinished()
+        {
+            bool playerpower = true;
+
+            foreach(Player player in Players)
+            {
+                if (player.HasPower)
+                {
+                    playerpower = false;
+                }
+
+                if (player.AtFinish || playerpower)
+                {
+                    GameFinished = true;
+                }
+
+            }
+        } 
+
+
         /// <summary>
         ///  Plays one round of a game
         /// </summary>
 
         public static void PlayOneRound()
         {
-            bool finishedfromfuel = false;
             for (int i = 0; i < numberOfPlayers; i++)
             {
-
-                if (players[i].RocketFuel > 0)
-                {
-                    players[i].Play(die1, die2);
-                    finishedfromfuel = false;
-                }
-                else
-                {
-                    finishedfromfuel = true;
-                }
-
+                players[i].Play(die1, die2);
             }
-
+            IsGameFinished();
         }//end SnakesAndLadders
 
-
+        private static bool gamefinished;
+        /// <summary>
+        ///  Checks if game has ended
+        /// </summary>
+        public static bool GameFinished
+        {
+            get
+            {
+                return gamefinished;
+            }
+            set
+            {
+                gamefinished = value;
+            }
+        }
     }
 }
