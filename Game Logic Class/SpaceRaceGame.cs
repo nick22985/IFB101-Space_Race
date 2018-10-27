@@ -94,9 +94,31 @@ namespace Game_Logic_Class
             }
         } 
 
-    //    public static string showgameresults() {
+        public static string showgameresults()
+        {
+            bool did_player_finish = false;
+            string finished_output = "";
+            string finished_players = "";
+            foreach (Player player in Players)
+            {
+                if(player.AtFinish)
+                {
+                    finished_players += string.Format("\n\t\t{0}", player.Name);
+                    did_player_finish = true;
+                }
+            }
 
-      //  }
+            if (did_player_finish)
+            {
+                finished_output += ("\n\n\tThe following player(s) finished the game\n");
+                finished_output += (finished_players + "\n\n");
+            }
+            else
+            {
+                finished_output += ("\n\n\tNo players finished the game\n");
+            }
+            return finished_output;
+        }
 
         /// <summary>
         ///  Plays one round of a game

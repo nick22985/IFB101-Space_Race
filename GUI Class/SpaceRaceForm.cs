@@ -302,6 +302,7 @@ namespace GUI_Class
         private void RollDice_Click(object sender, EventArgs e)
         {
             comboBox.Enabled = false;
+            gamereset.Enabled = true;
             UpdatePlayersGuiLocations(TypeOfGuiUpdate.RemovePlayer);
             SpaceRaceGame.PlayOneRound();
             UpdatePlayersGuiLocations(TypeOfGuiUpdate.AddPlayer);
@@ -310,7 +311,7 @@ namespace GUI_Class
             {
                 RollDice.Enabled = false;
                 gamereset.Enabled = true;
-                //var msg_box = MessageBox.Show(SpaceRaceGame.showgameresults)
+                var msg_box = MessageBox.Show(SpaceRaceGame.showgameresults());
             }
         }
 
@@ -328,7 +329,6 @@ namespace GUI_Class
 
         private void gamereset_Click(object sender, EventArgs e)
         {
-            gamereset.Enabled = false;
             RollDice.Enabled = true;
 
             comboBox.Enabled = true;
