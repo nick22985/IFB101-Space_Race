@@ -204,7 +204,6 @@
             this.singlestep.BackColor = System.Drawing.SystemColors.ControlDark;
             this.singlestep.Controls.Add(this.SingleStepNo);
             this.singlestep.Controls.Add(this.SingleStepYes);
-            this.singlestep.Enabled = false;
             this.singlestep.Location = new System.Drawing.Point(45, 354);
             this.singlestep.Name = "singlestep";
             this.singlestep.Size = new System.Drawing.Size(140, 55);

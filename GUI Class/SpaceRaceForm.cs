@@ -176,6 +176,7 @@ namespace GUI_Class
             // and you want to implement the Reset button event handler.
             //
             // for the reset button
+           
             UpdatePlayersGuiLocations(TypeOfGuiUpdate.RemovePlayer);
             SpaceRaceGame.SetUpPlayers();
             // end of logic for rest
