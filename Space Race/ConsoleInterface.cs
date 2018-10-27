@@ -35,10 +35,13 @@ namespace Space_Race
             //The restart point in the case of user selecting yes for playing another game
             Restart:
             SpaceRaceGame.Players.Clear();
+
            //sets up board
             Board.SetUpBoard();
+
             //asks for the amount of player playing and passes the number to spaceracegame playercount
             askForPlayerAmount();
+
             //sets up players
             SpaceRaceGame.SetUpPlayers();
 
@@ -73,9 +76,14 @@ namespace Space_Race
                     break;
                 }
             }
+
             //displays the player(s) who reached the final square
             playersWhoFinshedDisplay();
-            DisplayFinalStatistics();
+
+            //calls displayFinalStatistics
+            displayFinalStatistics();
+
+            //calls askForAnotherGame
             askForAnotherGame();
             goto Restart;
         }//end Main
@@ -131,6 +139,8 @@ namespace Space_Race
             }
 
         }
+
+        //displays players amount of fuel and location when called
         static void displayRoundResultText(int j)
         {
             Console.WriteLine("\t{0} on square {1} with {2} yattowatt of power remaining", SpaceRaceGame.Players[j].Name, SpaceRaceGame.Players[j].Position, SpaceRaceGame.Players[j].RocketFuel);
@@ -139,6 +149,7 @@ namespace Space_Race
         //asks player for the amount of players they want in the game (must be bewteen 6 and 2)
         static void askForPlayerAmount()
         {
+            //a point where 
             askForPlayerNumStart:
             Console.WriteLine("\tThis game is for 2 to 6 players.");
             Console.Write("\tHow many players (2-6): ");
@@ -185,7 +196,7 @@ namespace Space_Race
         }
 
         //Displays the final location and fuel of all players
-        static void DisplayFinalStatistics()
+        static void displayFinalStatistics()
         {
             Console.WriteLine("Individual players finished with the at the locations specified");
             for (int i = 0; i < SpaceRaceGame.NumberOfPlayers; i++)
