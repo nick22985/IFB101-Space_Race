@@ -277,8 +277,8 @@ namespace GUI_Class
             {
                 for (int i = 0; i < SpaceRaceGame.NumberOfPlayers; i++)
                 {
-                    //GetSquareNumberOfPlayer(i);
-                    //SquareControl.SquareControl();
+                    GetSquareNumberOfPlayer(i);
+                    SquareControl.ContainsPlayers[1] 
                 }
                 
             }
