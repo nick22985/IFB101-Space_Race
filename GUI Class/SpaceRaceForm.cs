@@ -299,6 +299,12 @@ namespace GUI_Class
             SpaceRaceGame.PlayOneRound();
             UpdatePlayersGuiLocations(TypeOfGuiUpdate.AddPlayer);
             UpdatesPlayersDataGridView();
+            if (SpaceRaceGame.GameFinished)
+            {
+                RollDice.Enabled = false;
+
+                var msg_box = MessageBox.Show(SpaceRaceGame)
+            }
         }
 
         private void comboBox_SelectedIndexChanged(object sender, EventArgs e)

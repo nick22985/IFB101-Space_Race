@@ -160,7 +160,7 @@
             this.playersDataGridView.Location = new System.Drawing.Point(0, 126);
             this.playersDataGridView.Name = "playersDataGridView";
             this.playersDataGridView.RowHeadersVisible = false;
-            this.playersDataGridView.Size = new System.Drawing.Size(213, 124);
+            this.playersDataGridView.Size = new System.Drawing.Size(213, 196);
             this.playersDataGridView.TabIndex = 5;
             // 
             // playerTokenImageDataGridViewImageColumn
