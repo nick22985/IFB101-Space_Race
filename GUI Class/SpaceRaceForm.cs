@@ -304,7 +304,7 @@ namespace GUI_Class
             {
                 RollDice.Enabled = false;
                 gamereset.Enabled = true;
-                //var msg_box = MessageBox.Show(SpaceRaceGame)
+                //var msg_box = MessageBox.Show(SpaceRaceGame.showgameresults)
             }
         }
 
