@@ -114,7 +114,7 @@ namespace Object_Classes
             }
 
             // Creates Wormhole Squares from list
-            for (int tempVar = 0; tempVar < 7; tempVar++)
+            for (int tempVar = 0; tempVar < ((wormHoles.Length) / 3); tempVar++)
             {
                 squares[wormHoles[tempVar, 0]] = new WormholeSquare(wormHoles[tempVar, 0].ToString(), wormHoles[tempVar, 0], wormHoles[tempVar, 1], wormHoles[tempVar, 2]);
             }
