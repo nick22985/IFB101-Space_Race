@@ -338,5 +338,15 @@ namespace GUI_Class
 
             PrepareToPlay();
         }
-    }// end class
+
+        private void SingleStepYes_CheckedChanged(object sender, EventArgs e)
+        {
+            SpaceRaceGame.step_single = true;
+        }
+
+        private void SingleStepNo_CheckedChanged(object sender, EventArgs e)
+        {
+            SpaceRaceGame.step_single = false;
+        }
+    } // end class
 }

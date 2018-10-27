@@ -124,11 +124,32 @@ namespace Game_Logic_Class
         /// </summary>
         public static void PlayOneRound()
         {
-            for (int i = 0; i < numberOfPlayers; i++)
+            if (step_single == true)
             {
-                players[i].Play(die1, die2);
+                // Roll and move players
+                players[PlayernumForSingleStep].Play(die1, die2);
+
+                // check if it is that last player for the individual round
+                if (PlayernumForSingleStep == (NumberOfPlayers -1))
+                {
+                    PlayernumForSingleStep = 0;
+                }
+                else
+                {
+                    // this will move to the next player if the game is not over.
+                    playernumforsinglestep++;
+                }
+                
+            }
+            else 
+            {
+            for (int i = 0; i < numberOfPlayers; i++)
+                {
+                    players[i].Play(die1, die2);
+                }
             }
             IsGameFinished();
+
         }//end SpaceRace
 
         private static bool gamefinished;
@@ -144,6 +165,37 @@ namespace Game_Logic_Class
             set
             {
                 gamefinished = value;
+            }
+        }
+        /// <summary>
+        /// single step toggle
+        /// </summary>
+
+        public static bool step_single
+        {
+            get
+            {
+                return step_single;
+            }
+            set
+            {
+                step_single = value;
+            }
+        }
+
+        private static int playernumforsinglestep = 0;
+        /// <summary>
+        /// current player for single step
+        /// </summary>
+        public static int PlayernumForSingleStep
+        {
+            get
+            {
+                return playernumforsinglestep;
+            }
+            set
+            {
+                playernumforsinglestep = value;
             }
         }
     }
