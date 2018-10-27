@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using Game_Logic_Class;
 //  Uncomment  this using statement when you declare any object from Object Classes, eg Board,Square etc.
 using Object_Classes;
-
+//teahsefsa
 namespace GUI_Class
 {
     public partial class SpaceRaceForm : Form
@@ -272,40 +272,40 @@ namespace GUI_Class
             //       retrieve the SquareControl object with that square number
             //       using the typeOfGuiUpdate, update the appropriate element of 
             //          the ContainsPlayers array of the SquareControl object.
-            //     
-            for (int player = 0; player < SpaceRaceGame.NumberOfPlayers; player++)
+            //          
+            if (typeOfGuiUpdate == TypeOfGuiUpdate.AddPlayer)
             {
-                //find square number
-                int player_square_pos = GetSquareNumberOfPlayer(player);
-                // gets the square control at the currentsquare
-                SquareControl current_square = SquareControlAt(player_square_pos);
-
-                if (typeOfGuiUpdate == TypeOfGuiUpdate.AddPlayer)
+                for (int i = 0; i < SpaceRaceGame.NumberOfPlayers; i++)
                 {
-                    current_square.ContainsPlayers[player] = true;
+                    //GetSquareNumberOfPlayer(i);
+                    //SquareControl.SquareControl();
                 }
-                if (typeOfGuiUpdate == TypeOfGuiUpdate.RemovePlayer)
-                {
-                    current_square.ContainsPlayers[player] = false;
-                } 
+                
             }
+            if (typeOfGuiUpdate == TypeOfGuiUpdate.RemovePlayer)
+            {
 
+            }
 
             RefreshBoardTablePanelLayout();//must be the last line in this method. Do not put inside above loop.
         } //end UpdatePlayersGuiLocations
 
         private void RollDice_Click(object sender, EventArgs e)
         {
-            UpdatePlayersGuiLocations(TypeOfGuiUpdate.RemovePlayer);
+            UpdatePlayersGuiLocations(TypeOfGuiUpdate.AddPlayer);
             SpaceRaceGame.PlayOneRound();
             UpdatePlayersGuiLocations(TypeOfGuiUpdate.AddPlayer);
             UpdatesPlayersDataGridView();
-
         }
 
         private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
                      DetermineNumberOfPlayers();
+        }
+
+        private void SpaceRaceForm_Load(object sender, EventArgs e)
+        {
+
         }
     }// end class
 }

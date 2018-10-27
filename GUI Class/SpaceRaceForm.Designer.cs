@@ -281,6 +281,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "SpaceRaceForm";
             this.Text = "Space Race";
+            this.Load += new System.EventHandler(this.SpaceRaceForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
