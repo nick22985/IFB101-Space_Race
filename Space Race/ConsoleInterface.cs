@@ -53,11 +53,11 @@ namespace Space_Race
                 SpaceRaceGame.PlayOneRound();
                 int totalfuel = 0;
                 //display all players location and fuel
-                for(int j = 0; j < SpaceRaceGame.NumberOfPlayers; j++)
+                for(int tempVar = 0; tempVar < SpaceRaceGame.NumberOfPlayers; tempVar++)
                 {
-                    displayRoundResultText(j);
-                    totalfuel = totalfuel + SpaceRaceGame.Players[j].RocketFuel;
-                    if (SpaceRaceGame.Players[j].AtFinish == true)
+                    displayRoundResultText(tempVar);
+                    totalfuel = totalfuel + SpaceRaceGame.Players[tempVar].RocketFuel;
+                    if (SpaceRaceGame.Players[tempVar].AtFinish == true)
                     {
                          gamefinished = true;
                     }
@@ -210,26 +210,20 @@ namespace Space_Race
         {
             Console.WriteLine("\n\tPress Enter key to continue ...");
             Console.ReadKey();
-            TryDifferentInput:
             Console.Write("\n\n\n\tPlay Again? (Y or N): ");
             string playAnotherAnswer = Console.ReadLine();
             int IsYes;
-            int IsNo;
+            int IsLowerCaseY;
             IsYes = (String.Compare(playAnotherAnswer, "Y"));
-            IsNo = (String.Compare(playAnotherAnswer, "N"));
-            if (IsYes == 0)
+            IsLowerCaseY = (String.Compare(playAnotherAnswer, "y"));
+            if (IsYes == 0 || IsLowerCaseY == 0)
             {
                 
             }
-            else if(IsNo == 0)
+            else
             {
                 Console.WriteLine("\n\n\n\tThanks for playing Space Race.\n");
                 PressEnter();
-            }
-            else
-            {
-                Console.WriteLine("\tInvalid Input");
-                goto TryDifferentInput;
             }
         } // end PressAny
 
