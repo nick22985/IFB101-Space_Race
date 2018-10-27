@@ -67,8 +67,6 @@ namespace Game_Logic_Class
                 players[i].RocketFuel = Player.INITIAL_FUEL_AMOUNT;
                 players[i].Location = Board.Squares[0];
                 players[i].PlayerTokenColour = playerTokenColours[i];
-
-
             }
             // for number of players
             //      create a new player object

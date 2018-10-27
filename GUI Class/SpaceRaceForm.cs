@@ -150,16 +150,14 @@ namespace GUI_Class
             {
                 int previous_number_of_players = SpaceRaceGame.NumberOfPlayers;
                 SpaceRaceGame.NumberOfPlayers = int.Parse(comboBox.SelectedItem.ToString());
-                if (SpaceRaceGame.NumberOfPlayers == previous_number_of_players)
+                if (previous_number_of_players != SpaceRaceGame.NumberOfPlayers)
                 {
-
+                    for (int i = 0; i <= SpaceRaceGame.NumberOfPlayers; i++)
+                    {
+                        SpaceRaceGame.Players[i].Remove("")
+                    }
+                    
                 }
-                else
-                {
-                    int temp_NumberOfPlayers = SpaceRaceGame.NumberOfPlayers - previous_number_of_players;
-                    SpaceRaceGame.SetUpPlayers();
-                }
-
             }
             else
             { }//Value is null
