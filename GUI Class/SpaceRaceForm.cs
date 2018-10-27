@@ -148,7 +148,18 @@ namespace GUI_Class
             // Store the SelectedItem property of the ComboBox in a string  
             if (comboBox.SelectedItem != null)
             {
+                int previous_number_of_players = SpaceRaceGame.NumberOfPlayers;
                 SpaceRaceGame.NumberOfPlayers = int.Parse(comboBox.SelectedItem.ToString());
+                if (SpaceRaceGame.NumberOfPlayers == previous_number_of_players)
+                {
+
+                }
+                else
+                {
+                    int temp_NumberOfPlayers = SpaceRaceGame.NumberOfPlayers - previous_number_of_players;
+                    SpaceRaceGame.SetUpPlayers();
+                }
+
             }
             else
             { }//Value is null
@@ -207,9 +218,10 @@ namespace GUI_Class
         private int GetSquareNumberOfPlayer(int playerNumber)
         {
             // Code needs to be added here.
+            int playerpos =  SpaceRaceGame.Players[playerNumber].Position;
 
             //     delete the "return -1;" once body of method has been written 
-            return -1;
+            return playerpos;
         }//end GetSquareNumberOfPlayer
 
 
@@ -280,7 +292,7 @@ namespace GUI_Class
 
         private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DetermineNumberOfPlayers();
+                     DetermineNumberOfPlayers();
         }
     }// end class
 }
