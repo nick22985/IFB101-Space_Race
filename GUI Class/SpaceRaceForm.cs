@@ -303,13 +303,15 @@ namespace GUI_Class
             {
                 RollDice.Enabled = false;
 
-                var msg_box = MessageBox.Show(SpaceRaceGame)
+                //var msg_box = MessageBox.Show(SpaceRaceGame)
             }
         }
 
         private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-                     DetermineNumberOfPlayers();
+            UpdatePlayersGuiLocations(TypeOfGuiUpdate.RemovePlayer);
+            DetermineNumberOfPlayers();
+            UpdatePlayersGuiLocations(TypeOfGuiUpdate.AddPlayer);
         }
 
         private void SpaceRaceForm_Load(object sender, EventArgs e)
