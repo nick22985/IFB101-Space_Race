@@ -127,9 +127,6 @@ namespace Object_Classes
                     squares[tempVar] = new Square(tempVar.ToString(), tempVar);
                 }
             }
-            //   Need to call the appropriate constructor for each square
-            //       either new Square(...),  new WormholeSquare(...) or new BlackholeSquare(...)
-            //
 
             // Create the 'finish' square.
             squares[FINISH_SQUARE_NUMBER] = new Square("Finish", FINISH_SQUARE_NUMBER);
@@ -137,33 +134,5 @@ namespace Object_Classes
         } // end SetUpBoard
 
 
-        public static int whatTypeOfSquare(int squareNum)
-        {
-            int[] playerupdate = new int[2];
-            int type = -1;
-            for (int i = 0; i < NUMBER_OF_SQUARES; i++)
-            {
-                if (squareNum == wormHoles[i, 0])
-                {
-                    type = 0;
-                    return type;
-                }
-                else if (squareNum == blackHoles[i, 0])
-                {
-                    type = 1;
-                    return type;
-                }
-                else
-                {
-                    type = 2;
-                    return type;
-                }
-            }
-            if (type == 0)
-            {
-                return type;
-            }
-            return type;
-        }
     } //end class Board
 }
