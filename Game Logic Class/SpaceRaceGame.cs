@@ -72,7 +72,8 @@ namespace Game_Logic_Class
             //      add player to the binding list
 
         }
-
+        //checks if game is finished
+        //game is finished when player(s) are at the finish or all players are out of fuel
         private static void IsGameFinished()
         {
             bool playerpower = true;
@@ -99,7 +100,6 @@ namespace Game_Logic_Class
         /// <summary>
         ///  Plays one round of a game
         /// </summary>
-
         public static void PlayOneRound()
         {
             for (int i = 0; i < numberOfPlayers; i++)
@@ -107,7 +107,7 @@ namespace Game_Logic_Class
                 players[i].Play(die1, die2);
             }
             IsGameFinished();
-        }//end SnakesAndLadders
+        }//end SpaceRace
 
         private static bool gamefinished;
         /// <summary>
