@@ -273,6 +273,18 @@ namespace GUI_Class
             //       using the typeOfGuiUpdate, update the appropriate element of 
             //          the ContainsPlayers array of the SquareControl object.
             //          
+            if (typeOfGuiUpdate == TypeOfGuiUpdate.AddPlayer)
+            {
+                for (int i = 0; i < SpaceRaceGame.NumberOfPlayers)
+                {
+                    GetSquareNumberOfPlayer();
+                }
+                
+            }
+            if (typeOfGuiUpdate == TypeOfGuiUpdate.RemovePlayer)
+            {
+
+            }
 
             RefreshBoardTablePanelLayout();//must be the last line in this method. Do not put inside above loop.
         } //end UpdatePlayersGuiLocations
