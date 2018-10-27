@@ -107,24 +107,24 @@ namespace Object_Classes
             // Create the main part of the board, squares 1 .. 54
             //  CODE NEEDS TO BE ADDED HERE
 
-            // Creates Black hole Squares
-            for (int i = 0; i < ((blackHoles.Length) / 3); i++)
+            // Creates Black hole Squares list
+            for (int tempVar = 0; tempVar < ((blackHoles.Length) / 3); tempVar++)
             {
-                squares[blackHoles[i, 0]] = new BlackholeSquare(blackHoles[i, 0].ToString(), blackHoles[i, 0], blackHoles[i, 1], blackHoles[i, 2]);
+                squares[blackHoles[tempVar, 0]] = new BlackholeSquare(blackHoles[tempVar, 0].ToString(), blackHoles[tempVar, 0], blackHoles[tempVar, 1], blackHoles[tempVar, 2]);
             }
 
-            // Creates Wormhole Squares
-            for (int i = 0; i < 7; i++)
+            // Creates Wormhole Squares from list
+            for (int tempVar = 0; tempVar < 7; tempVar++)
             {
-                squares[wormHoles[i, 0]] = new WormholeSquare(wormHoles[i, 0].ToString(), wormHoles[i, 0], wormHoles[i, 1], wormHoles[i, 2]);
+                squares[wormHoles[tempVar, 0]] = new WormholeSquare(wormHoles[tempVar, 0].ToString(), wormHoles[tempVar, 0], wormHoles[tempVar, 1], wormHoles[tempVar, 2]);
             }
 
-            // Creates normal squares
-            for (int i = 0; i < NUMBER_OF_SQUARES; i++)
+            // Creates normal squares where there are no wormhole or black hole squares
+            for (int tempVar = 0; tempVar < NUMBER_OF_SQUARES; tempVar++)
             {
-                if (squares[i] == null)
+                if (squares[tempVar] == null)
                 {
-                    squares[i] = new Square(i.ToString(), i);
+                    squares[tempVar] = new Square(tempVar.ToString(), tempVar);
                 }
             }
             //   Need to call the appropriate constructor for each square
@@ -165,40 +165,5 @@ namespace Object_Classes
             }
             return type;
         }
-        /// <summary>
-        /// Finds the destination square and the amount of fuel used for either a 
-        /// Wormhole or Blackhole Square.
-        /// 
-        /// pre: squareNum is either a Wormhole or Blackhole square number
-        /// post: destNum and amount are assigned correct values.
-        /// </summary>
-        /// <param name="holes">a 2D array representing either the Wormholes or Blackholes squares information</param>
-        /// <param name="squareNum"> a square number of either a Wormhole or Blackhole square</param>
-        /// <param name="destNum"> destination square's number</param>
-        /// <param name="amount"> amont of fuel used to jump to the deestination square</param>
-        private static void FindDestSquare(int[,] holes, int squareNum, out int destNum, out int amount)
-        {
-            const int start = 0, exit = 1, fuel = 2;
-            
-            destNum = 0; amount = 0;
-            //finds the destination for a black/worm hole
-            destNum = holes[squareNum, 2];
-            //finds the amount of fuel used
-            amount = holes[squareNum, 3];
-            //  CODE NEEDS TO BE ADDED HERE 
-             
-            if (squares[squareNum].Name == "Black Hole")
-            {
-                //BlackholeSquare.LandOn();
-               
-            }
-            if (squares[squareNum].Name == "Worm Hole")
-            {
-                //WormholeSquare.LandOn();
-            }
-
-
-        } //end FindDestSquare
-
     } //end class Board
 }
