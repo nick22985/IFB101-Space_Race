@@ -175,8 +175,14 @@ namespace GUI_Class
             // until you can play a game through to the finish square
             // and you want to implement the Reset button event handler.
             //
-            gamereset.Enabled = false;
-            comboBox.SelectedIndex = 0;
+            // for the reset button
+            UpdatePlayersGuiLocations(TypeOfGuiUpdate.RemovePlayer);
+            SpaceRaceGame.SetUpPlayers();
+            // end of logic for rest
+
+           
+
+
             UpdatePlayersGuiLocations(TypeOfGuiUpdate.AddPlayer);
 
         }//end PrepareToPlay()
@@ -318,6 +324,19 @@ namespace GUI_Class
         private void SpaceRaceForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void gamereset_Click(object sender, EventArgs e)
+        {
+            gamereset.Enabled = false;
+            RollDice.Enabled = true;
+
+            comboBox.Enabled = true;
+            playersDataGridView.Enabled = true;
+
+            SpaceRaceGame.GameFinished = false;
+
+            PrepareToPlay();
         }
     }// end class
 }

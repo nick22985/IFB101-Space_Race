@@ -57,6 +57,7 @@ namespace Game_Logic_Class
         /// </summary>
         public static void SetUpPlayers()
         {
+            Players.Clear();
             //Creates speicfied players for game
             for (int i = 0; i < numberOfPlayers; i++)
             {
