@@ -179,8 +179,7 @@ namespace Object_Classes
             {
                 location = Board.Squares[position];
                 location.LandOn(this);
-            }
-            
+            }            
         } // end Play.
 
 
@@ -223,8 +222,6 @@ namespace Object_Classes
 
         } //end ReachedFinalSquare
 
-
-       
     } //end class Player
 
 }

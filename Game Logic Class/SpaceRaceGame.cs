@@ -71,7 +71,6 @@ namespace Game_Logic_Class
             //      create a new player object
             //      initialize player's instance variables for start of a game
             //      add player to the binding list
-
         }
         //checks if game is finished
         //game is finished when player(s) are at the finish or all players are out of fuel
@@ -108,7 +107,7 @@ namespace Game_Logic_Class
                 }
             }
 
-            if (did_player_finish)
+            if (did_player_finish == true)
             {
                 finished_output += ("\n\n\tThe following player(s) finished the game\n");
                 finished_output += (finished_players + "\n\n");
