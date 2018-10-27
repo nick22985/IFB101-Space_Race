@@ -287,7 +287,7 @@ namespace GUI_Class
                 if (typeOfGuiUpdate == TypeOfGuiUpdate.RemovePlayer)
                 {
                     current_square.ContainsPlayers[player] = false;
-                }
+                } 
             }
 
 
