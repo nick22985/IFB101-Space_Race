@@ -92,10 +92,9 @@ namespace Game_Logic_Class
             }
         } 
 
-        public static string showgameresults()
-        {
-            
-        }
+    //    public static string showgameresults() {
+
+      //  }
 
         /// <summary>
         ///  Plays one round of a game
