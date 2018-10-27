@@ -275,9 +275,10 @@ namespace GUI_Class
             //          
             if (typeOfGuiUpdate == TypeOfGuiUpdate.AddPlayer)
             {
-                for (int i = 0; i < SpaceRaceGame.NumberOfPlayers)
+                for (int i = 0; i < SpaceRaceGame.NumberOfPlayers; i++)
                 {
-                    GetSquareNumberOfPlayer();
+                    //GetSquareNumberOfPlayer(i);
+                    //SquareControl.SquareControl();
                 }
                 
             }
