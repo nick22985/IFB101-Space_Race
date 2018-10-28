@@ -200,6 +200,7 @@
             this.SingleStepYes.TabStop = true;
             this.SingleStepYes.Text = "Yes";
             this.SingleStepYes.UseVisualStyleBackColor = true;
+            this.SingleStepYes.CheckedChanged += new System.EventHandler(this.SingleStepYes_CheckedChanged);
             this.SingleStepYes.Click += new System.EventHandler(this.SingleStepYes_Click);
             // 
             // spaceracetitle
