@@ -419,5 +419,10 @@ namespace GUI_Class
             singlestep.Enabled = false;
             RollDice.Enabled = true;
         }
+
+        private void SingleStepYes_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     } // end class
 }
