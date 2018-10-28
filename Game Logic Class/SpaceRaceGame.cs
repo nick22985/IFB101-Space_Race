@@ -9,7 +9,6 @@ namespace Game_Logic_Class
         // Minimum and maximum number of players.
         public const int MIN_PLAYERS = 2;
         public const int MAX_PLAYERS = 6;
-
         private static int numberOfPlayers = 2;  //default value for test purposes only 
         public static int NumberOfPlayers
         {
@@ -118,12 +117,13 @@ namespace Game_Logic_Class
             }
             return finished_output;
         }
-
+        public static bool step_single;
         /// <summary>
         ///  Plays one round of a game
         /// </summary>
         public static void PlayOneRound()
         {
+
             if (step_single == true)
             {
                 // Roll and move players
@@ -170,18 +170,19 @@ namespace Game_Logic_Class
         /// <summary>
         /// single step toggle
         /// </summary>
-
-        public static bool step_single
-        {
-            get
-            {
-                return step_single;
-            }
-            set
-            {
-                step_single = value;
-            }
-        }
+        /// 
+        private static bool _step_single = true;
+   //     public static bool step_single
+  //      {
+  //          get
+  //          {
+  //              return _step_single;
+  //          }
+ //           set
+  //          {
+  //               _step_single = value;
+  //          }
+ //       }
 
         private static int playernumforsinglestep = 0;
         /// <summary>

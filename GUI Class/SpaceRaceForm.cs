@@ -343,6 +343,7 @@ namespace GUI_Class
         private void SingleStepYes_CheckedChanged(object sender, EventArgs e)
         {
             SpaceRaceGame.step_single = true;
+            SpaceRaceGame.Players[0].Name = "test";
         }
 
         private void SingleStepNo_CheckedChanged(object sender, EventArgs e)
