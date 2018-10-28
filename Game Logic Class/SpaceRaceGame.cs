@@ -176,7 +176,6 @@ namespace Game_Logic_Class
                     {
                         players[i].Play(die1, die2);
                     }
-                        
                 }
                 IsGameFinished();
             }

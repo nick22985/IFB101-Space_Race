@@ -170,6 +170,7 @@ namespace Object_Classes
             int dice = temp1 + temp2;
             position = position + dice;
             ReachedFinalSquare();
+            location.LandOn(this);
             if (ReachedFinalSquare() == true)
             {
                 position = 55;
@@ -178,7 +179,6 @@ namespace Object_Classes
             else
             {
                 location = Board.Squares[position];
-                location.LandOn(this);
             }            
         } // end Play.
 
