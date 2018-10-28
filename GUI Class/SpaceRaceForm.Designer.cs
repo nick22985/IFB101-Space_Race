@@ -35,11 +35,6 @@
             this.gamereset = new System.Windows.Forms.Button();
             this.RollDice = new System.Windows.Forms.Button();
             this.playersDataGridView = new System.Windows.Forms.DataGridView();
-            this.playerTokenImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.positionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rocketFuelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.playerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.singlestep = new System.Windows.Forms.GroupBox();
             this.SingleStepNo = new System.Windows.Forms.RadioButton();
             this.SingleStepYes = new System.Windows.Forms.RadioButton();
@@ -48,13 +43,18 @@
             this.playerstext = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.playerTokenImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.positionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rocketFuelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.playerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playersDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).BeginInit();
             this.singlestep.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -123,11 +123,12 @@
             this.comboBox.Name = "comboBox";
             this.comboBox.Size = new System.Drawing.Size(35, 21);
             this.comboBox.TabIndex = 1;
-            this.comboBox.Text = "2";
+            this.comboBox.Text = "6";
             this.comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox_SelectedIndexChanged);
             // 
             // gamereset
             // 
+            this.gamereset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.gamereset.Location = new System.Drawing.Point(33, 626);
             this.gamereset.Name = "gamereset";
             this.gamereset.Size = new System.Drawing.Size(75, 23);
@@ -138,6 +139,7 @@
             // 
             // RollDice
             // 
+            this.RollDice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.RollDice.Location = new System.Drawing.Point(83, 597);
             this.RollDice.Name = "RollDice";
             this.RollDice.Size = new System.Drawing.Size(75, 23);
@@ -163,6 +165,83 @@
             this.playersDataGridView.RowHeadersVisible = false;
             this.playersDataGridView.Size = new System.Drawing.Size(213, 196);
             this.playersDataGridView.TabIndex = 5;
+            // 
+            // singlestep
+            // 
+            this.singlestep.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.singlestep.Controls.Add(this.SingleStepNo);
+            this.singlestep.Controls.Add(this.SingleStepYes);
+            this.singlestep.Location = new System.Drawing.Point(45, 354);
+            this.singlestep.Name = "singlestep";
+            this.singlestep.Size = new System.Drawing.Size(140, 55);
+            this.singlestep.TabIndex = 4;
+            this.singlestep.TabStop = false;
+            this.singlestep.Text = "Single Step?";
+            // 
+            // SingleStepNo
+            // 
+            this.SingleStepNo.AutoSize = true;
+            this.SingleStepNo.Location = new System.Drawing.Point(74, 19);
+            this.SingleStepNo.Name = "SingleStepNo";
+            this.SingleStepNo.Size = new System.Drawing.Size(39, 17);
+            this.SingleStepNo.TabIndex = 1;
+            this.SingleStepNo.TabStop = true;
+            this.SingleStepNo.Text = "No";
+            this.SingleStepNo.UseVisualStyleBackColor = true;
+            this.SingleStepNo.Click += new System.EventHandler(this.SingleStepNo_Click);
+            // 
+            // SingleStepYes
+            // 
+            this.SingleStepYes.AutoSize = true;
+            this.SingleStepYes.Location = new System.Drawing.Point(25, 19);
+            this.SingleStepYes.Name = "SingleStepYes";
+            this.SingleStepYes.Size = new System.Drawing.Size(43, 17);
+            this.SingleStepYes.TabIndex = 0;
+            this.SingleStepYes.TabStop = true;
+            this.SingleStepYes.Text = "Yes";
+            this.SingleStepYes.UseVisualStyleBackColor = true;
+            this.SingleStepYes.Click += new System.EventHandler(this.SingleStepYes_Click);
+            // 
+            // spaceracetitle
+            // 
+            this.spaceracetitle.AutoSize = true;
+            this.spaceracetitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.spaceracetitle.Location = new System.Drawing.Point(39, 9);
+            this.spaceracetitle.Name = "spaceracetitle";
+            this.spaceracetitle.Size = new System.Drawing.Size(132, 25);
+            this.spaceracetitle.TabIndex = 1;
+            this.spaceracetitle.Text = "SpaceRace";
+            // 
+            // numberofplayerstext
+            // 
+            this.numberofplayerstext.AutoSize = true;
+            this.numberofplayerstext.Location = new System.Drawing.Point(15, 51);
+            this.numberofplayerstext.Name = "numberofplayerstext";
+            this.numberofplayerstext.Size = new System.Drawing.Size(93, 13);
+            this.numberofplayerstext.TabIndex = 2;
+            this.numberofplayerstext.Text = "Number of Players";
+            // 
+            // playerstext
+            // 
+            this.playerstext.AutoSize = true;
+            this.playerstext.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playerstext.Location = new System.Drawing.Point(65, 98);
+            this.playerstext.Name = "playerstext";
+            this.playerstext.Size = new System.Drawing.Size(91, 25);
+            this.playerstext.TabIndex = 3;
+            this.playerstext.Text = "Players";
+            // 
+            // exitButton
+            // 
+            this.exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.Location = new System.Drawing.Point(119, 626);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(75, 23);
+            this.exitButton.TabIndex = 0;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // playerTokenImageDataGridViewImageColumn
             // 
@@ -199,82 +278,6 @@
             // 
             this.playerBindingSource.DataSource = typeof(Object_Classes.Player);
             // 
-            // singlestep
-            // 
-            this.singlestep.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.singlestep.Controls.Add(this.SingleStepNo);
-            this.singlestep.Controls.Add(this.SingleStepYes);
-            this.singlestep.Location = new System.Drawing.Point(45, 354);
-            this.singlestep.Name = "singlestep";
-            this.singlestep.Size = new System.Drawing.Size(140, 55);
-            this.singlestep.TabIndex = 4;
-            this.singlestep.TabStop = false;
-            this.singlestep.Text = "Single Step?";
-            // 
-            // SingleStepNo
-            // 
-            this.SingleStepNo.AutoSize = true;
-            this.SingleStepNo.Location = new System.Drawing.Point(74, 19);
-            this.SingleStepNo.Name = "SingleStepNo";
-            this.SingleStepNo.Size = new System.Drawing.Size(39, 17);
-            this.SingleStepNo.TabIndex = 1;
-            this.SingleStepNo.TabStop = true;
-            this.SingleStepNo.Text = "No";
-            this.SingleStepNo.UseVisualStyleBackColor = true;
-            this.SingleStepNo.CheckedChanged += new System.EventHandler(this.SingleStepNo_CheckedChanged);
-            // 
-            // SingleStepYes
-            // 
-            this.SingleStepYes.AutoSize = true;
-            this.SingleStepYes.Location = new System.Drawing.Point(25, 19);
-            this.SingleStepYes.Name = "SingleStepYes";
-            this.SingleStepYes.Size = new System.Drawing.Size(43, 17);
-            this.SingleStepYes.TabIndex = 0;
-            this.SingleStepYes.TabStop = true;
-            this.SingleStepYes.Text = "Yes";
-            this.SingleStepYes.UseVisualStyleBackColor = true;
-            this.SingleStepYes.CheckedChanged += new System.EventHandler(this.SingleStepYes_CheckedChanged);
-            // 
-            // spaceracetitle
-            // 
-            this.spaceracetitle.AutoSize = true;
-            this.spaceracetitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.spaceracetitle.Location = new System.Drawing.Point(39, 9);
-            this.spaceracetitle.Name = "spaceracetitle";
-            this.spaceracetitle.Size = new System.Drawing.Size(132, 25);
-            this.spaceracetitle.TabIndex = 1;
-            this.spaceracetitle.Text = "SpaceRace";
-            // 
-            // numberofplayerstext
-            // 
-            this.numberofplayerstext.AutoSize = true;
-            this.numberofplayerstext.Location = new System.Drawing.Point(15, 51);
-            this.numberofplayerstext.Name = "numberofplayerstext";
-            this.numberofplayerstext.Size = new System.Drawing.Size(93, 13);
-            this.numberofplayerstext.TabIndex = 2;
-            this.numberofplayerstext.Text = "Number of Players";
-            // 
-            // playerstext
-            // 
-            this.playerstext.AutoSize = true;
-            this.playerstext.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerstext.Location = new System.Drawing.Point(65, 98);
-            this.playerstext.Name = "playerstext";
-            this.playerstext.Size = new System.Drawing.Size(91, 25);
-            this.playerstext.TabIndex = 3;
-            this.playerstext.Text = "Players";
-            // 
-            // exitButton
-            // 
-            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.Location = new System.Drawing.Point(119, 626);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(75, 23);
-            this.exitButton.TabIndex = 0;
-            this.exitButton.Text = "Exit";
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
             // SpaceRaceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,9 +294,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.playersDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).EndInit();
             this.singlestep.ResumeLayout(false);
             this.singlestep.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.playerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

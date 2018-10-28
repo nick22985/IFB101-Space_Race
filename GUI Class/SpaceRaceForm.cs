@@ -30,7 +30,6 @@ namespace GUI_Class
             SetupPlayersDataGridView();
             DetermineNumberOfPlayers();
             SpaceRaceGame.SetUpPlayers();
-            gamereset.Enabled = false;
             PrepareToPlay();
         }
 
@@ -181,9 +180,12 @@ namespace GUI_Class
             UpdatePlayersGuiLocations(TypeOfGuiUpdate.RemovePlayer);
             SpaceRaceGame.SetUpPlayers();
             // end of logic for rest
-
             UpdatePlayersGuiLocations(TypeOfGuiUpdate.AddPlayer);
-
+            SingleStepYes.Checked = false;
+            SingleStepNo.Checked = false;
+            singlestep.Enabled = true;
+            RollDice.Enabled = false;
+            gamereset.Enabled = false;
         }//end PrepareToPlay()
 
 
@@ -298,6 +300,47 @@ namespace GUI_Class
             RefreshBoardTablePanelLayout();//must be the last line in this method. Do not put inside above loop.
         } //end UpdatePlayersGuiLocations
 
+        /// <summary>
+        /// At several places in the program's code, it is necessary to update the GUI board,
+        /// so that player's tokens are removed from their old squares
+        /// or added to their new squares. E.g. at the end of a round of play or 
+        /// when the Reset button has been clicked.
+        /// 
+        /// Moving all players from their old to their new squares requires this method to be called twice: 
+        /// once with the parameter typeOfGuiUpdate set to RemovePlayer, and once with it set to AddPlayer.
+        /// In between those two calls, the players locations must be changed. 
+        /// Otherwise, you won't see any change on the screen.
+        /// 
+        /// Pre:  the Players objects in the SpaceRaceGame have each players' current locations
+        /// Post: the GUI board is updated to match 
+        /// </summary>
+        private void UpdateSinglePlayerGuiLocations(TypeOfGuiUpdate typeOfGuiUpdate)
+        {
+            // Code needs to be added here which does the following:
+            //
+            //   for each player
+            //       determine the square number of the player
+            //       retrieve the SquareControl object with that square number
+            //       using the typeOfGuiUpdate, update the appropriate element of 
+            //          the ContainsPlayers array of the SquareControl object.
+            //          
+            //find square number
+            int player_square_pos = GetSquareNumberOfPlayer(SpaceRaceGame.PlayernumForSingleStep);
+            // gets the square control at the currentsquare
+            SquareControl current_square = SquareControlAt(player_square_pos);
+
+            if (typeOfGuiUpdate == TypeOfGuiUpdate.AddPlayer)
+            {
+                current_square.ContainsPlayers[SpaceRaceGame.PlayernumForSingleStep] = true;
+            }
+            if (typeOfGuiUpdate == TypeOfGuiUpdate.RemovePlayer)
+            {
+                current_square.ContainsPlayers[SpaceRaceGame.PlayernumForSingleStep] = false;
+            }
+            RefreshBoardTablePanelLayout();//must be the last line in this method. Do not put inside above loop.
+        } //end UpdatePlayersGuiLocations
+
+
         private void RollDice_Click(object sender, EventArgs e)
         {
             RollDice.Enabled = false;
@@ -363,15 +406,18 @@ namespace GUI_Class
             PrepareToPlay();
         }
 
-        private void SingleStepYes_CheckedChanged(object sender, EventArgs e)
+        private void SingleStepYes_Click(object sender, EventArgs e)
         {
             SpaceRaceGame.Step_Single = true;
-            // SpaceRaceGame.Players[0].Name = "test";
+            singlestep.Enabled = false;
+            RollDice.Enabled = true;
         }
 
-        private void SingleStepNo_CheckedChanged(object sender, EventArgs e)
+        private void SingleStepNo_Click(object sender, EventArgs e)
         {
             SpaceRaceGame.Step_Single = false;
+            singlestep.Enabled = false;
+            RollDice.Enabled = true;
         }
     } // end class
 }

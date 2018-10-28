@@ -76,6 +76,7 @@ namespace Game_Logic_Class
         private static void IsGameFinished()
         {
             bool playerpower = true;
+            int are_all_player_out_of_fuel = 0;
 
             foreach(Player player in Players)
             {
@@ -83,8 +84,12 @@ namespace Game_Logic_Class
                 {
                     playerpower = false;
                 }
+                if (player.HasPower == false)
+                {
+                    are_all_player_out_of_fuel += 1;
+                }
 
-                if (player.AtFinish || playerpower)
+                if (player.AtFinish || are_all_player_out_of_fuel == numberOfPlayers)
                 {
                     GameFinished = true;
                 }
@@ -122,30 +127,36 @@ namespace Game_Logic_Class
         /// </summary>
         public static void PlayOneRound()
         {
-
             if (Step_Single == true)
             {
-                // Roll and move players
-                players[PlayernumForSingleStep].Play(die1, die2);
+                if (players[PlayernumForSingleStep].HasPower == true)
+                {
+                    // Roll and move players
+                    players[PlayernumForSingleStep].Play(die1, die2);
 
-                // check if it is that last player for the individual round
-                if (PlayernumForSingleStep == (NumberOfPlayers -1))
-                {
-                    PlayernumForSingleStep = 0;
-                    IsGameFinished();
+                    // check if it is that last player for the individual round
+                    if (PlayernumForSingleStep == (NumberOfPlayers - 1))
+                    {
+                        PlayernumForSingleStep = 0;
+                        IsGameFinished();
+                    }
+                    else
+                    {
+                        // this will move to the next player if the game is not over.
+                        playernumforsinglestep++;
+                    }
                 }
-                else
-                {
-                    // this will move to the next player if the game is not over.
-                    playernumforsinglestep++;
-                }
-                
+
             }
             else 
             {
             for (int i = 0; i < numberOfPlayers; i++)
                 {
-                    players[i].Play(die1, die2);
+                    if (players[PlayernumForSingleStep].HasPower == true)
+                    {
+                        players[i].Play(die1, die2);
+                    }
+                        
                 }
                 IsGameFinished();
             }
