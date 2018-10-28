@@ -127,6 +127,7 @@ namespace Game_Logic_Class
                 finished_output += ("\n\n\tThe following player(s) finished the game\n");
                 finished_output += (finished_players + "\n\n");
             }
+
             else
             {
                 //returns no players finished
