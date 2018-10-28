@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.IO;
 
 namespace Object_Classes
 {
@@ -14,6 +15,12 @@ namespace Object_Classes
         private const int MIN_FACES = 4;
         private const int DEFAULT_FACE_VALUE = 1;
         private const int SIX_SIDED = 6;
+
+        // addendum var declartions
+        private static string defaultPath = Environment.CurrentDirectory;
+        private static string rollFileName = defaultPath + "\\testrolls.txt";
+        private static StreamReader rollFile = new StreamReader(rollFileName);
+        private static bool DEBUG = true;
 
         // number of sides on the die
         private int numOfFaces;
@@ -75,7 +82,14 @@ namespace Object_Classes
         //-----------------------------------------------------------------
         public int Roll()
         {
-            faceValue = random.Next(NumOfFaces) + 1;
+            if (!DEBUG)
+            {
+                faceValue = random.Next(NumOfFaces) + 1;
+            }
+            else
+            {
+                faceValue = int.Parse(rollFile.ReadLine());
+            }
             return FaceValue;
         }
 
