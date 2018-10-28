@@ -149,8 +149,6 @@ namespace Game_Logic_Class
                 }
                 IsGameFinished();
             }
-            
-
         }//end SpaceRace
 
         private static bool gamefinished;
@@ -168,11 +166,12 @@ namespace Game_Logic_Class
                 gamefinished = value;
             }
         }
+
+        private static bool step_single = false;
         /// <summary>
         /// single step toggle
         /// </summary>
         /// 
-        private static bool step_single = true;
         public static bool Step_Single
         {
             get

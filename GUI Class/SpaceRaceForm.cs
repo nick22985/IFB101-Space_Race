@@ -13,7 +13,6 @@ namespace GUI_Class
         // The numbers of rows and columns on the screen.
         const int NUM_OF_ROWS = 7;
         const int NUM_OF_COLUMNS = 8;
-        int mapnumbrun = 0;
 
         // When we update what's on the screen, we show the movement of a player 
         // by removing them from their old square and adding them to their new square.
@@ -31,6 +30,7 @@ namespace GUI_Class
             SetupPlayersDataGridView();
             DetermineNumberOfPlayers();
             SpaceRaceGame.SetUpPlayers();
+            gamereset.Enabled = false;
             PrepareToPlay();
         }
 
@@ -149,6 +149,7 @@ namespace GUI_Class
             if (comboBox.SelectedItem != null)
             {
                 int previous_number_of_players = SpaceRaceGame.NumberOfPlayers;
+                SpaceRaceGame.PlayernumForSingleStep = 0;
                 SpaceRaceGame.NumberOfPlayers = int.Parse(comboBox.SelectedItem.ToString());
                 if (previous_number_of_players != SpaceRaceGame.NumberOfPlayers)
                 {
@@ -180,9 +181,6 @@ namespace GUI_Class
             UpdatePlayersGuiLocations(TypeOfGuiUpdate.RemovePlayer);
             SpaceRaceGame.SetUpPlayers();
             // end of logic for rest
-
-           
-
 
             UpdatePlayersGuiLocations(TypeOfGuiUpdate.AddPlayer);
 
@@ -302,12 +300,38 @@ namespace GUI_Class
 
         private void RollDice_Click(object sender, EventArgs e)
         {
+            RollDice.Enabled = false;
+
+            gamereset.Enabled = false;
+            exitButton.Enabled = false;
+
             comboBox.Enabled = false;
-            gamereset.Enabled = true;
+            playersDataGridView.Enabled = false;
+
             UpdatePlayersGuiLocations(TypeOfGuiUpdate.RemovePlayer);
+
             SpaceRaceGame.PlayOneRound();
+
+            if (SpaceRaceGame.Step_Single == true)
+            {
+                if (SpaceRaceGame.PlayernumForSingleStep == 0)
+                {
+                    gamereset.Enabled = true;
+                    exitButton.Enabled = true;
+                }
+            }
+            else
+            {
+                gamereset.Enabled = true;
+                exitButton.Enabled = true;
+            }
+
             UpdatePlayersGuiLocations(TypeOfGuiUpdate.AddPlayer);
+
             UpdatesPlayersDataGridView();
+
+            RollDice.Enabled = true;
+
             if (SpaceRaceGame.GameFinished)
             {
                 RollDice.Enabled = false;
@@ -331,7 +355,6 @@ namespace GUI_Class
         private void gamereset_Click(object sender, EventArgs e)
         {
             RollDice.Enabled = true;
-
             comboBox.Enabled = true;
             playersDataGridView.Enabled = true;
 
@@ -343,7 +366,7 @@ namespace GUI_Class
         private void SingleStepYes_CheckedChanged(object sender, EventArgs e)
         {
             SpaceRaceGame.Step_Single = true;
-           // SpaceRaceGame.Players[0].Name = "test";
+            // SpaceRaceGame.Players[0].Name = "test";
         }
 
         private void SingleStepNo_CheckedChanged(object sender, EventArgs e)

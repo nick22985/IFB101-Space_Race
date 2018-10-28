@@ -133,6 +133,32 @@ namespace Object_Classes
             squares[START_SQUARE_NUMBER] = new Square("Start", START_SQUARE_NUMBER);
         } // end SetUpBoard
 
+          /// <summary>
+          /// Finds the destination square and the amount of fuel used for either a 
+          /// Wormhole or Blackhole Square.
+          /// 
+          /// pre: squareNum is either a Wormhole or Blackhole square number
+          /// post: destNum and amount are assigned correct values.
+          /// </summary>
+          /// <param name="holes">a 2D array representing either the Wormholes or Blackholes squares information</param>
+          /// <param name="squareNum"> a square number of either a Wormhole or Blackhole square</param>
+          /// <param name="destNum"> destination square's number</param>
+          /// <param name="amount"> amount of fuel used to jump to the destination square</param>
+        private static void FindDestSquare(int[,] holes, int squareNum, out int destNum, out int amount)
+        {
+            const int start = 0, exit = 1, fuel = 2;
+            destNum = 0; amount = 0;
+
+            for (int hole = 0; hole < holes.GetLength(0); hole++)
+            {
+
+                if (holes[hole, start] == squareNum)
+                {
+                    destNum = holes[hole, exit]; 
+                    amount = holes[hole, fuel]; 
+                }
+            }
+        } //end FindDestSquare
 
     } //end class Board
 }
