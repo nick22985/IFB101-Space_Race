@@ -78,11 +78,11 @@ namespace Space_Race
 
 
 
-
-
-
-
-
+//#######################################################################################
+//---------------------------------------------------------------------------------------
+        // DISPLAY FUNCTIONS  \/
+//---------------------------------------------------------------------------------------
+//#######################################################################################
 
 
 
@@ -99,6 +99,7 @@ namespace Space_Race
             Console.WriteLine("\n\tWelcome to Space Race.\n");
         } //end DisplayIntroductionMessage
 
+//-----------------------------------------------------------------------
 
         //displays text to play one round
         // Pre: none.
@@ -126,11 +127,15 @@ namespace Space_Race
 
         }
 
+//-----------------------------------------------------------------------
+
         //displays players amount of fuel and location when called
         static void displayRoundResultText(int tempVar)
         {
             Console.WriteLine("\t{0} on square {1} with {2} yattowatt of power remaining", SpaceRaceGame.Players[tempVar].Name, SpaceRaceGame.Players[tempVar].Position, SpaceRaceGame.Players[tempVar].RocketFuel);
         }
+
+//-----------------------------------------------------------------------
 
         //asks player for the amount of players they want in the game (must be bewteen 6 and 2)
         static void askForPlayerAmount()
@@ -168,6 +173,9 @@ namespace Space_Race
             }
         }
 
+
+//-----------------------------------------------------------------------
+
         //displays all the players who reached the final square
         static void playersWhoFinshedDisplay()
         {
@@ -181,6 +189,10 @@ namespace Space_Race
             }
         }
 
+
+//-----------------------------------------------------------------------
+
+
         //Displays the final location and fuel of all players
         static void displayFinalStatistics()
         {
@@ -191,6 +203,10 @@ namespace Space_Race
             }
         }
 
+
+//-----------------------------------------------------------------------
+
+
         //when called displays message to terminate program, then waits for key press to terminate.
         static void PressEnter()
         {
@@ -198,6 +214,10 @@ namespace Space_Race
             Console.ReadKey();
             Environment.Exit(-1);
         }
+
+
+//-----------------------------------------------------------------------
+
 
         //displays promps to play another game
         //if "y" or "Y" is inputed, a new game starts

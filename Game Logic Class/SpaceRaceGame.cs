@@ -43,6 +43,7 @@ namespace Game_Logic_Class
         // The pair of die
         private static Die die1 = new Die(), die2 = new Die();
 
+//-----------------------------------------------------------------------
 
         /// <summary>
         /// Set up the conditions for this game as well as
@@ -71,6 +72,9 @@ namespace Game_Logic_Class
             //      initialize player's instance variables for start of a game
             //      add player to the binding list
         }
+
+ //-----------------------------------------------------------------------
+
         //checks if game is finished
         //game is finished when player(s) are at the finish or all players are out of fuel
         private static void IsGameFinished()
@@ -95,8 +99,13 @@ namespace Game_Logic_Class
                 }
 
             }
-        } 
+        }
 
+//-----------------------------------------------------------------------
+
+        //returns the players who finished the game
+        //in the case of all players running out of fuel, message is returned stating no players finished
+        //used in GUI
         public static string showgameresults()
         {
             bool did_player_finish = false;
@@ -104,6 +113,7 @@ namespace Game_Logic_Class
             string finished_players = "";
             foreach (Player player in Players)
             {
+                //determines the players who have finished and stores their name in a string
                 if(player.AtFinish)
                 {
                     finished_players += string.Format("\n\t\t{0}", player.Name);
@@ -113,20 +123,29 @@ namespace Game_Logic_Class
 
             if (did_player_finish == true)
             {
+                //returns the players who finished allong with a message
                 finished_output += ("\n\n\tThe following player(s) finished the game\n");
                 finished_output += (finished_players + "\n\n");
             }
             else
             {
+                //returns no players finished
                 finished_output += ("\n\n\tNo players finished the game\n");
             }
             return finished_output;
         }
+
+
+ //-----------------------------------------------------------------------
+
         /// <summary>
         ///  Plays one round of a game
+        ///  calls play function for each player
+        ///  when round is finished, game checks if it is over or not
         /// </summary>
         public static void PlayOneRound()
         {
+            //if single step selected in GUI, rounds are played on a player turn basis
             if (Step_Single == true)
             {
                 if (players[PlayernumForSingleStep].HasPower == true)
@@ -148,6 +167,7 @@ namespace Game_Logic_Class
                 }
 
             }
+            //game plays on a round by round basis
             else 
             {
             for (int i = 0; i < numberOfPlayers; i++)
@@ -161,6 +181,10 @@ namespace Game_Logic_Class
                 IsGameFinished();
             }
         }//end SpaceRace
+
+
+//-----------------------------------------------------------------------
+
 
         private static bool gamefinished;
         /// <summary>
@@ -178,6 +202,10 @@ namespace Game_Logic_Class
             }
         }
 
+
+//-----------------------------------------------------------------------
+
+
         private static bool step_single = false;
         /// <summary>
         /// single step toggle
@@ -194,6 +222,9 @@ namespace Game_Logic_Class
                 step_single = value;
             }
         }
+
+
+//-----------------------------------------------------------------------
 
         private static int playernumforsinglestep = 0;
         /// <summary>
