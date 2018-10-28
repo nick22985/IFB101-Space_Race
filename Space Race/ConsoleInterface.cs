@@ -34,6 +34,7 @@ namespace Space_Race
 
             //The restart point in the case of user selecting yes for playing another game
             Restart:
+            SpaceRaceGame.GameFinished = false;
             SpaceRaceGame.Players.Clear();
 
            //sets up board
