@@ -79,15 +79,10 @@ namespace Game_Logic_Class
         //game is finished when player(s) are at the finish or all players are out of fuel
         private static void IsGameFinished()
         {
-            bool playerpower = true;
             int are_all_player_out_of_fuel = 0;
 
             foreach(Player player in Players)
             {
-                if (player.HasPower)
-                {
-                    playerpower = false;
-                }
                 if (player.HasPower == false)
                 {
                     are_all_player_out_of_fuel += 1;
